@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label for="empid">EmpId</label>
+            <input type="number" id="empid" placeholder="enter empid">
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="enter name">
+        </div>
+        <div>
+            <label for="salary">Salary</label>
+            <input type="number" id="salary" placeholder="enter salary">
+        </div>
+        <div>
+            <button onclick="save()">Save</button>
+        </div>
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Empid</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="total">0</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        let totalSalary = 0
+        function save() {
+            const empid = document.getElementById("empid").value
+            const name = document.getElementById("name").value
+            const salary = document.getElementById("salary").value
+            const tbody = document.getElementById("tbody")
+            const total = document.getElementById("total")
+
+            const row = `
+            <tr>
+                <td>${empid}</td>
+                <td>${name}</td>
+                <td>${salary}</td>
+            </tr>`
+
+            tbody.innerHTML += row
+            totalSalary += parseInt(salary)
+            total.innerText = totalSalary
+
+        }
+    </script>
+</body>
+
+</html>

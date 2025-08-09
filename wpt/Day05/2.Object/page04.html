@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        //constructor function
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        let p1 = new Person("Anil", 30)
+        console.log(p1)
+
+        let p2 = new Person()
+        console.log(p2)
+
+        let p3 = new Person("Mukesh", 32)
+        console.log(p3)
+
+        // If  property is not present it will create a new property in the object
+        p3.phone = "8765432456"
+        console.log(p3)
+
+        // If the property is present it will just add the value
+        p2.name = "Ramesh"
+        console.log(p2)
+    </script>
+</body>
+
+</html>

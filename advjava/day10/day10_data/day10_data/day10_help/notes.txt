@@ -1,0 +1,290 @@
+Restaurant 1<----->* FoodItem
+eg : FoodItem n Restaurant
+Details -
+Restaurant extends BaseEntity
+private String name;
+private String address;
+private String city;
+private String description;
++
+//Restaurant 1 ----> * FoodItem
+@OneToMany
+//Project Tip - Always init collection based property to EMPTY collection(to avoid NPException)
+private List<FoodItem> foodItems=new ArrayList<>();
+
+Food Item -
+
+private String itemName;
+private String itemDescription;
+private boolean isVeg;
+private int price;
++
+//FoodItem *--->1 Restaurant
+@ManyToOne
+private Restaurant myRestaurant;
+
+
+Restaurant - one , parent , non -owning (inverse)
+Food Item - many , child, owning side (the side containing FK or join table )
+
+In one-many , many side is ALWAYS owning side of the association (to maintain normalization) n one side is - inverse side of the asso.
+
+JPA annotations for any type of association
+@OneToMany
+@ManyToOne
+@OneToOne
+@ManyToMany
+
+
+Project Tip
+Exclude association based properties from toString
+ - to avoid infinite recursion(stack overflow !)
+
+Problem 
+- un necessary additional join table is created(eg -restaurants_food_items)
+
+Cause - Hibernate(JPA implementor) DOES NOT auto understand , in Bi dir associtation , which is the owning side (FK) n which is the inverse side.
+
+Solution - Add mappedBy property in @OneToMany annotation
+where - inverse side of association
+what should the value of mappedBy property 
+- name of the property , from the owning side.
+
+Recommendation -
+To customize FK column name ,add
+@JoinColumn(name="restaurant_id")
+private Restaurant myRestaurant;
+
+
+
+ How to add composite unique constraint over multiple columns
+ eg - combination of restaurant_id n food item name - unique
+ 
+@Table(name = "food_items",uniqueConstraints 
+= @UniqueConstraint
+(columnNames = {"item_name","restaurant_id"}))
+
+Use case
+1. Add new restuarant
+i/p - name , address, desc , city ....
+o/p - mesg
+
+
+2. Add new food item to the restaurant
+i/p - restaurant id  + food item details
+o/p - mesg
+
+In order to establish a bi dir association , between the entities
+- as per Founder's suggestion
+- add helper methods in the parent Entity class(eg - Restaurant)
+ - to add | remove child reference
+ eg - addFoodItem , removeFoodItem
+
+Problem(limitation)
+Without explicitly calling session.persist(foodItem), 
+ - hibernate DOES not auto insert a rec in food_items table
+
+If you want to delete particular restaurant details 
+ - first you will have to delete child recs (i.e from food_items )
+ n then delete parent record.
+
+Similar problem - while updation.
+
+Solution - Use cascading 
+What is it ?
+ - JPA's capability of automatically propagating changes from one entity(eg - Restaurant) to associated entity (eg - FoodItem)
+How ?
+@OneToMany(mappedBy = "myRestaurant",
+			cascade = CascadeType.ALL) //propagate ALL operations from src -> target entity
+	private List<FoodItem> foodItems = new ArrayList<>();
+
+---------------------------
+Project Tip
+Create either bi dir one-many n many-one 
+ - in case you need bi dir data navigation
+ - cascading
+OR
+Create uni dir - many->one association
+It is higher performant than uni dir one->many association
+(since many side - is owning side continaing FK)
+eg - Catgeory 1 <--- *Product
+Category.java
+ - List<Product> : not required !
+
+Product.java
+....
++
+@ManyToOne
+@JoinColumn(name="category_id",nullable=false)
+private Category productCategory; 
+
+Solve -
+Display all products by specified category name.
+i/p - category name
+o/p - list products
+
+How will you solve it in bi dir association ?
+
+How will you solve it in uni dir(Product *--->1 Category) association ?
+ - select p form Product p where p.productCategory.name=:nm
+
+Solve - Category 1<---->* Product
+Delete specific product from specific category
+ i/p - category id , product id
+Dev steps
+get category from its id (session.get)
+get product form its id(session.get)
+ validate - category exists && product exsists && product.getProductCategory().getId == categoryId
+ - if valid 
+  - category.removeProduct(product);
+- tx.commit
+
+DB - FK will be set to null | exception
+cause -default value of orphanRemoval - false
+solution - set orphanRemoval - true
+
+
+Problem - org.hibernate.LazyInitializationException
+Scenario - While accessing food items in the tester
+ i/p - restaurant name
+ Could access restaurant details BUT could NOT access food item details.
+
+Cause - JPA has default data fetching policy
+one->many : LAZY
+many->one : EAGER
+one->one : EAGER
+many->many : LAZY
+In the current case Restaurant 1----* FoodItem (LAZY)
+Meaning - By default - Hibernate fires select query upon 
+ -only restaurants table
+ => food items details are - un fetched from DB
+ -> represented by a Proxy (- substitution | Placeholder) - empty wrapper
+
+When does Hibernate throw LazyInitException ?
+ - Any time , you are trying to access un fetched data (proxy) , outside session scope(after tx.commit).
+
+Why JPA(Hibernate) behaves for any->many in lazy manner
+- performance
+
+Solutions
+1. Change fetch type to eager (Entity layer)
+ - by adding a property in @OneToMany annotation
+ - fetch=FetchType.EAGER
+
+Use case - the size of many is small
+eg - BankCustomer HAS-A List of BankAccounts 
+User HAS-A List of roles
+Dis advantage - in all the cases hibernate will fetch complete details(eg -
+restaurant + its menu)
+
+OR
+
+2. Change fetch=FetchType.LAZY(default)
+Access the proxy(un fecthed data) , from within the session scope
+(before tx.commit)
+Hint - by accessing size of the collection.
+- DAO layer solution
+Dis adv - complete details are fetched using multiple selecte queries
+(select n+1 issue)
+
+OR
+
+3. DAO layer solution to fetch complete details in a single join query
+soln - using join fetch 
+JPQL  - select r from Restaurant r left join fetch r.foodItems where r.name=:nm
+
+foodItems - name of the property in Restaurant entity class
+
+-------------------
+
+3.	Uni dir one-one association
+-	User Has-A Address OR Address HAS-A User
+  - User 1---->1   Address
+
+User.java 
+ - user details
++
+//If required - can change fetch type -> lazy
+@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+@JoinColumn(name="address_id")
+private Address myAddress;
+
+
+Address.java -  address details
+no additional reference !
+
+-------------------
+4.	Uni dir many-many association
+-	Restaurant *<------* Tag
+Tables - restaurants , tags - parent tables
+          - link table - my_restaurant_tags - child table
+          - restaurant_id ---> reference -> Restaurant 's PK
+          - tag_id ---> reference -> Tag 's PK
+          - composite PK
+
+Dev steps
+Restaurant *<------* Tag
+
+Restaurant Entity
+- must override equals n hashCode - @EqualsAndHashCode(of=unique property)
+....
+
+Tag Entity
+ name ...
+@ManyToMany
+To csutomemize name of the link table
+@JoinTable(name="my_restaurant_tags")
++ private Set<Restaurant> restaurants=new HashSet<>();
+
+Project Tip
+1. In case of many-many , use collection type 
+- Set interface <----HashSet 
+- to reduce no of queries
+
+2. In case of many-many with additional columns
+ - you can't directly use @ManyToMany
+  - since it will create a join table only with 2 columns (compoiste PK)
+
+eg - You can add multiple food items under single order
+       You can add a single food item under multiple orders
+   -indicates Order *------*  FoodItem
+ In order to add more columns - 
+    Solution - Create a separate entity n split many-many in 2 many->one associations
+
+ eg. Order 1<----->* OrderLine
+       FoodItem 1 <----* OrderLine
+
+eg - Student admission 
+
+   
+Solve 
+Value Types
+
+User HAS-A AdhaarCard -example of Embeddable
+User HAS-A List of hobbies - name: String  - example of collection of basic value type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

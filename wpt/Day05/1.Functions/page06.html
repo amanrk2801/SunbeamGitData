@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        // function add (n1, n2) {
+        //     const result = n1 + n2
+        //     console.log("Addition = " + result)
+        // }
+
+        // Anonymous function
+        let add = function (n1, n2) {
+            const result = n1 + n2
+            console.log("Addition = " + result)
+        }
+
+        console.log(add)
+        console.log(typeof (add))
+
+        // Arrow Functions
+        let mul = (n1, n2) => {
+            const result = n1 * n2
+            console.log("Multiplication = " + result)
+        }
+
+        console.log(mul)
+        console.log(typeof (mul))
+
+        add(10, 20)
+        mul(10, 20)
+    </script>
+</body>
+
+</html>

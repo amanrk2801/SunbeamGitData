@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            const result = n1 + n2
+            console.log("Addition = " + result)
+        }
+
+        function sub(n1, n2) {
+            const result = n1 - n2
+            console.log("Substraction = " + result)
+        }
+
+        function mul(n1, n2) {
+            const result = n1 * n2
+            console.log("Multiplication = " + result)
+        }
+
+        //executer function
+        // Higher Order functions
+        function executer(n1, n2, fn) {
+            fn(n1, n2)
+        }
+
+        executer(10, 20, add)
+        executer(20, 10, sub)
+        executer(7, 5, mul)
+
+        // executer(10, 2, function (n1, n2) {
+        //     const result = n1 / n2
+        //     console.log("Division = " + result)
+        // })
+
+        executer(10, 2, (n1, n2) => {
+            const result = n1 / n2
+            console.log("Division = " + result)
+        })
+    </script>
+</body>
+
+</html>

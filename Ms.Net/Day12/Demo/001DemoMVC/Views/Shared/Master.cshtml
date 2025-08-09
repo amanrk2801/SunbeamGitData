@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+   <div class="container">
+       <img src="~/images/logo.jpg" class="image-responsive"/>
+       <hr />
+        <center>
+            <h1> This is Master Page Layout Look </h1>
+        </center>
+        <hr />
+        <a href="/SB/Index">Home</a> |
+        <a href="/SB/About">About Us</a> |
+        <a href="/SB/Contact">Contact Us</a> |
+        <hr />
+
+       <div class="row">
+          <div class="col-md-9" 
+               style="background-color: skyblue; border: 2px solid black; margin:5px">
+                @RenderBody()
+          </div>
+            <div class="col-md-2" style="background-color: lightgray;border: 2px solid black; margin:5px">
+                @RenderSection("RHS",false)
+            </div>
+       </div>
+       <hr />
+       <center>
+            <h2>This is footer</h2>
+       </center>
+   </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--Add Spring bean definitions here -->
+	<!-- configure dependency beans -->
+	<!-- eng teacher singleton n eager -->
+	<bean id="eng" class="com.sunbeam.dependency.EnglishTeacher" />
+	<!-- Maths teacher singleton n lazy -->
+	<bean id="subjectTeacher" class="com.sunbeam.dependency.MathsTeacher"
+		lazy-init="true" />
+	<!-- Sc teacher prototype -->
+	<bean id="sc" class="com.sunbeam.dependency.ScienceTeacher"
+		scope="prototype" />
+	<!-- sports coaches depcy beans -->
+	<bean id="cricket" class="com.sunbeam.dependency.CricketCoach" />
+	<bean id="sportsCoach" class="com.sunbeam.dependency.FootballCoach"
+		scope="prototype" />
+	<bean id="swimming" class="com.sunbeam.dependency.SwimmingCoach"
+		lazy-init="true" />
+	<!-- dependent bean autowire byName -->
+	<bean id="public_school"
+		class="com.sunbeam.dependent.PublicSchool" 
+		init-method="myInit"
+		destroy-method="myDestroy" autowire="byName"/>
+</beans>

@@ -1,0 +1,73 @@
+1. When none of the parts of the contract fulfilled
+(overridden equals but not hashCode)
+Added true
+Added true
+Added true
+size 3
+Emps : 
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+-----------------------------------------------------------
+2. Mandatory : equal objects MUST produce same hashCode 
+Detects dups , BUT offers O(n) : performance degrades.....
+
+in hashCode
+Added true
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added true
+in hashCode
+in equals
+in equals
+Added true
+in hashCode
+in equals
+in equals
+in equals
+Added true
+in hashCode
+in equals
+in equals
+in equals
+in equals
+Added true
+size 5
+Emps : 
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-006, name=abc1, salary=10000]
+Employee [empId=rnd-005, name=abc1, salary=10000]
+Employee [empId=rnd-004, name=abc1, salary=10000]
+Employee [empId=rnd-002, name=abc1, salary=10000]
+-------------------------
+After following mandatory n optional
+in hashCode
+Added true
+in hashCode
+in equals
+Added false
+in hashCode
+in equals
+Added false
+in hashCode
+Added true
+in hashCode
+Added true
+in hashCode
+Added true
+in hashCode
+Added true
+size 5
+Emps : 
+Employee [empId=rnd-006, name=abc1, salary=10000]
+Employee [empId=rnd-005, name=abc1, salary=10000]
+Employee [empId=rnd-002, name=abc1, salary=10000]
+Employee [empId=rnd-001, name=abc1, salary=10000]
+Employee [empId=rnd-004, name=abc1, salary=10000]
+

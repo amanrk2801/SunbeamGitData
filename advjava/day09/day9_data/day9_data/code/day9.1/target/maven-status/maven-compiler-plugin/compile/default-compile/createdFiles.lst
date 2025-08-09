@@ -1,0 +1,17 @@
+com\sunbeam\tester\DisplayNameAndDobByRole.class
+com\sunbeam\tester\DisplayLastNamesByRole.class
+com\sunbeam\tester\GetUserDetailsById.class
+com\sunbeam\dao\UserDao.class
+com\sunbeam\tester\TestHibernate.class
+com\sunbeam\tester\UserRegistration.class
+com\sunbeam\tester\DisplayAllUserDetails.class
+com\sunbeam\tester\DeleteUserDetailsById.class
+com\sunbeam\tester\RestoreImage.class
+com\sunbeam\entities\User.class
+com\sunbeam\dao\UserDaoImpl.class
+com\sunbeam\tester\ChangePassword.class
+com\sunbeam\utils\HibernateUtils.class
+com\sunbeam\tester\ApplyDiscount.class
+com\sunbeam\entities\UserRole.class
+com\sunbeam\tester\DisplayUsersByRoleAndDate.class
+com\sunbeam\tester\SaveImage.class

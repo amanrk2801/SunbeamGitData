@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Day01/CircularQueue/CircularQueue.iml" filepath="$PROJECT_DIR$/Day01/CircularQueue/CircularQueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day05/DoublyCircularLinkedList/DoublyCircularLinkedList.iml" filepath="$PROJECT_DIR$/Day05/DoublyCircularLinkedList/DoublyCircularLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day04/DoublyLinearLinkedList/DoublyLinearLinkedList.iml" filepath="$PROJECT_DIR$/Day04/DoublyLinearLinkedList/DoublyLinearLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day02/ExpressionConversion/ExpressionConversion.iml" filepath="$PROJECT_DIR$/Day02/ExpressionConversion/ExpressionConversion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day02/ExpressionEvaluation/ExpressionEvaluation.iml" filepath="$PROJECT_DIR$/Day02/ExpressionEvaluation/ExpressionEvaluation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day05/HashTable_ClosedAddressing/HashTable_ClosedAddressing.iml" filepath="$PROJECT_DIR$/Day05/HashTable_ClosedAddressing/HashTable_ClosedAddressing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day05/HashTable_OpendAddressing/HashTable_OpendAddressing.iml" filepath="$PROJECT_DIR$/Day05/HashTable_OpendAddressing/HashTable_OpendAddressing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day01/LinearQueue/LinearQueue.iml" filepath="$PROJECT_DIR$/Day01/LinearQueue/LinearQueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day04/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/Day04/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day03/LinkedList/LinkedList2.iml" filepath="$PROJECT_DIR$/Day03/LinkedList/LinkedList2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day02/Searching/Searching.iml" filepath="$PROJECT_DIR$/Day02/Searching/Searching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day05/SinglyCircularLinkedList/SinglyCircularLinkedList.iml" filepath="$PROJECT_DIR$/Day05/SinglyCircularLinkedList/SinglyCircularLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day01/Stack/Stack.iml" filepath="$PROJECT_DIR$/Day01/Stack/Stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day03/bubbleSort/bubbleSort.iml" filepath="$PROJECT_DIR$/Day03/bubbleSort/bubbleSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dsa.iml" filepath="$PROJECT_DIR$/.idea/dsa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day03/insertionSort/insertionSort.iml" filepath="$PROJECT_DIR$/Day03/insertionSort/insertionSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day03/selectionSort/selectionSort.iml" filepath="$PROJECT_DIR$/Day03/selectionSort/selectionSort.iml" />
+    </modules>
+  </component>
+</project>

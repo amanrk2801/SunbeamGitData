@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    <script>
+        let n1 = 10 // Global scope
+        function f1() {
+            console.log("n1 in f1 = " + n1)
+            n1 = 20
+        }
+        f1()
+
+        function f2() {
+            console.log("n1 in f2 = " + n1)
+        }
+        f2()
+    </script>
+</body>
+
+</html>

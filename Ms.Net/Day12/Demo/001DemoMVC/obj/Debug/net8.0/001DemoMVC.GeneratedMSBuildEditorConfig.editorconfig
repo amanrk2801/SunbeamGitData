@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = _001DemoMVC
+build_property.RootNamespace = _001DemoMVC
+build_property.ProjectDir = D:\KaradDotNetDemos\Demo\001DemoMVC\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\KaradDotNetDemos\Demo\001DemoMVC
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Demo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Demo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Demo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Login/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Reply/MyView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwbHlcTXlWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Sample/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FtcGxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/SB/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0JcQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/SB/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0JcQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/SB/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Shared/Master.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Test/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/KaradDotNetDemos/Demo/001DemoMVC/Views/Test/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

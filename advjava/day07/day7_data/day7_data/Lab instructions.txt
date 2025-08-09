@@ -1,0 +1,50 @@
+Day 7
+
+Please follow these steps 
+(First 4 steps are already done in the morning)
+
+1. Copy hibernate_template_project under your workspace folder.
+
+2. From IDE
+Click on File --> import --> Maven --> Existing Maven Project --> Browse n select hibernate_template_project  --> Finish.
+
+3. Update the project .
+R click on the project --> Maven --> Update Project -->select Force update checkbox -->Finish
+
+4. Edit DB password from hibernate.cfg.xml , as per your DB settings.
+
+Start from here.
+Refer to your notes OR 
+"day7_help\hibernate help\Hibernate Sequence.txt"
+
+5. Create HibernateUtils class
+ - to build SessionFactory
+ 
+static {
+		System.out.println("in static init block");
+		//1. Create empty Configuration class instance
+		//2. Configure it - to populate it
+		//3. Builds SF
+		factory = new Configuration() //empty config
+		.configure() //loaded with xml based props n mappings
+		.buildSessionFactory();
+}
+
+6. Create n run TestHibernate
+ -  test if hibernate framework is up n running.
+
+7. Create POJO class 
+ - add @Entity n @Id annotations
+ - add other annotations
+ - add <mapping> entry in hibernate.cfg.xml
+
+8. Run TestHibernate again
+ - test automatic table creation 
+
+9. Copy supplied tester
+ - UserRegistration.java
+
+10. Run the code 
+ - to insert a record in DB
+
+

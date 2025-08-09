@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is h1</h1>
+    <p class="para">This is para 1</p>
+    <div>
+        <p id="pid">This is para 2</p>
+    </div>
+
+    <p class="para">This is para 3</p>
+    <button onclick="changeH1()">Change H1</button>
+    <button onclick="changeP1()">Change p1</button>
+    <button onclick="changeP2()">Change p2</button>
+    <button onclick="changeP3()">Change p3</button>
+
+    <script>
+        function changeH1() {
+            const arr = document.getElementsByTagName("h1")
+            console.log(arr)
+            arr[0].innerText = "Hello"
+        }
+
+        function changeP1() {
+            const arr = document.getElementsByClassName("para")
+            console.log(arr)
+            arr[0].innerText = "Welcome to Sunbeam"
+        }
+
+        function changeP2() {
+            const p = document.getElementById("pid")
+            console.log(p)
+            p.innerText = "Pune,Karad"
+            p.style.color = "Red"
+        }
+
+        function changeP3() {
+            const arr = document.getElementsByTagName('p')
+            console.log(arr)
+            arr[2].innerText = "Thank you , Bye"
+        }
+    </script>
+</body>
+
+</html>

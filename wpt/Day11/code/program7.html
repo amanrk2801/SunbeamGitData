@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .title {
+        color: red;
+      }
+
+      .address {
+        color: blue;
+      }
+
+      .email {
+        color: green;
+      }
+
+      .phone {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body onload="onPageLoad()">
+    <h1>JSX rendering variables</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function onPageLoad() {
+        // scalar variables
+        // - variables that hold a single value
+        const username = 'John Doe'
+        const address = 'New York'
+        const email = 'john@test.com'
+        const phone = '+123432423'
+
+        // const div = React.createElement('div', {}, 'hello user')
+        const div = (
+          <div>
+            <div className='title'>Hello {username}</div>
+            <div className='address'>Address: {address}</div>
+            <div className='email'>Email: {email}</div>
+            <div className='phone'>Phone: {phone}</div>
+          </div>
+        )
+
+        // we can render only one root element
+        ReactDOM.createRoot(document.getElementById('root')).render(div)
+      }
+    </script>
+  </body>
+</html>

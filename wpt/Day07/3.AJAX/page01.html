@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="getData()" class="btn btn-primary">Get Data</button>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Empid</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function getData() {
+            const tbody = document.getElementById("tbody")
+            // XHR
+            //Step1 : Create the object of XHR
+            const xhr = new XMLHttpRequest()
+
+            console.log("ready-state before open - " + xhr.readyState)
+
+            //Step2 : Configure the object for the url with the required method
+            xhr.open("GET", "http://localhost:5500/data.json")
+
+            console.log("ready-state after open - " + xhr.readyState)
+
+            // Step3 : Send the request
+            xhr.send()
+
+            //Step4 : define the function for the onreadystatechange property of xhr
+            xhr.onreadystatechange = () => {
+                //console.log("ready-state inside onreadystatechange- " + xhr.readyState)
+                //console.log("status - " + xhr.status)
+
+                //Step5 : If the status is 200 and the readystate is 4 then get the response
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    console.log(xhr.response)
+                    const arr = JSON.parse(xhr.response)
+                    console.log(arr)
+                    for (emp of arr) {
+                        const row = `
+                        <tr>
+                            <td>${emp.empid}</td>
+                            <td>${emp.name}</td>
+                            <td>${emp.salary}</td>
+                        </tr>
+                        `
+                        tbody.innerHTML += row
+                    }
+                }
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

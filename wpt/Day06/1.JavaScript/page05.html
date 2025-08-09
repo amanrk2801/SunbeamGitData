@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        Person.prototype.display = function () {
+            console.log(this.name + " - " + this.age)
+        }
+
+        let p1 = new Person("Anil", 30)
+        console.log(p1)
+
+        //let p2 = p1 // It will perform the refrence copy
+
+        // let p2 = {}
+        // p2.name = p1.name
+        // p2.age = p1.age
+        let p2 = { ...p1 } // spread operator
+
+        p2.__proto__ = p1.__proto__
+        // Object.setPrototypeOf(p2, p1)
+
+        console.log(p2)
+
+        p1.display()
+        //p2.display()
+
+        p2.name = "Mukesh"
+        console.log("After change in name in p2 -> ")
+
+        console.log(p1)
+        console.log(p2)
+    </script>
+</body>
+
+</html>

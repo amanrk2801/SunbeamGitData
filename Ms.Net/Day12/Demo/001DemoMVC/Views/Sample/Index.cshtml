@@ -1,0 +1,31 @@
+﻿@model _001DemoMVC.Models.Emp
+<html>
+    <head>
+    <title>@ViewBag.TitleOfTheUI</title>
+    </head>
+    <body>
+        <h1>Name</h1>
+        <h1>@Model.Name</h1>
+        
+        <hr />
+
+    <h1>Address</h1>
+    <h1>@Model.Address</h1>
+    <hr />
+
+    <h1>
+       @*  @ViewData["MyMessage"]  *@
+        @ViewBag.MyBook.ISBN
+    </h1>
+
+      <h2>
+        @ViewBag.MyBook.Title
+      </h2>
+        
+ 
+    <hr />
+    <h1>
+        @ViewBag.MyMessage
+    </h1>
+    </body>
+</html>

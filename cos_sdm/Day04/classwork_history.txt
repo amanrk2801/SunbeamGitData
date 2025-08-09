@@ -1,0 +1,30 @@
+ls
+rename "s/.txt/.cpp/" *.txt
+ls
+mkdir demo
+cd demo/
+ls
+cat > target.txt
+cat target.txt
+ls -l -i
+ln target.txt link.txt
+cat target.txt 
+cat link.txt 
+ls -l -i
+rm target.txt 
+cat link.txt 
+ls -l -i
+cat > target.txt 
+ls -l -i
+rm link.txt 
+ls -l -i
+ln -s target.txt link.txt
+cat target.txt 
+cat link.txt 
+ls -l -i
+rm target.txt 
+cat link.txt 
+ls -l -i
+cat > target.txt
+ls -l -i
+cat link.txt 

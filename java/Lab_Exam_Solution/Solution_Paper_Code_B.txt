@@ -1,0 +1,260 @@
+package com.sunbeam;
+
+import java.util.*;
+
+class Course {
+    private int id;
+    private String name;
+    private int duration;
+
+    public Course(int id, String name, int duration) {
+        this.id = id;
+        this.name = name;
+        this.duration = duration;
+    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public int getDuration() { return duration; }
+    public String toString() {
+        return id + ": " + name + " (" + duration + " hrs)";
+    }
+}
+
+class Student {
+    private int id;
+    private String name;
+    private String email;
+
+    public Student(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+    public String toString() {
+        return id + ": " + name + " (" + email + ")";
+    }
+}
+
+class Enrollment {
+	private int id;
+    private int studentId;
+    private int courseId;
+    private int progress;
+
+    public Enrollment(int id, int studentId, int courseId, int progress) {
+        this.studentId = studentId;
+        this.courseId = courseId;
+        this.progress = progress;
+    }
+    public int getStudentId() { return studentId; }
+    public int getCourseId() { return courseId; }
+    public int getProgress() { return progress; }
+    public void setProgress(int progress) { this.progress = progress; }
+}
+
+class CourseDAO {
+    private List<Course> courseList = new ArrayList<>();
+    private int nextId = 1;
+
+    public boolean addCourse(String name, int duration) {
+    	
+    	for(Course c : courseList) {
+    		if(c.getName().equals(name)&& c.getDuration()==duration) {
+    			return false;
+    		}
+    	}
+        courseList.add(new Course(nextId++, name, duration));
+        return true;
+    }
+
+    public Course getCourseById(int id) {
+        for (Course c : courseList) {
+            if (c.getId() == id) return c;
+        }
+        return null;
+    }
+
+    public List<Course> getAllCourses() {
+        return courseList;
+    }
+}
+
+class StudentDAO {
+    private List<Student> studentList = new ArrayList<>();
+    private int nextId = 1;
+
+    public void addStudent(String name, String email) {
+        studentList.add(new Student(nextId++, name, email));
+    }
+
+    public Student getStudentById(int id) {
+        for (Student s : studentList) {
+            if (s.getId() == id) return s;
+        }
+        return null;
+    }
+
+    public List<Student> getAllStudents() {
+        return studentList;
+    }
+}
+
+class EnrollmentDAO {
+    private List<Enrollment> enrollments = new ArrayList<>();
+    private int nextId = 1;
+
+    public boolean enrollStudent(int studentId, int courseId, int progress, CourseDAO courseDAO,StudentDAO studentDAO ) {
+    	Course c = courseDAO.getCourseById(courseId);
+    	Student s = studentDAO.getStudentById(studentId);
+    	System.out.println("* "+c);
+    	System.out.println("** "+s);
+    	
+            if (c==null || s==null) {
+                return false;
+            }
+        
+        enrollments.add(new Enrollment(nextId++, studentId, courseId, progress));
+        return true;
+    }
+
+    public List<Enrollment> getEnrollmentsByStudent(int studentId) {
+        List<Enrollment> list = new ArrayList<>();
+        for (Enrollment e : enrollments) {
+            if (e.getStudentId() == studentId) list.add(e);
+        }
+        return list;
+    }
+
+    public void updateProgress(int studentId, int courseId, int progress) {
+        for (Enrollment e : enrollments) {
+            if (e.getStudentId() == studentId && e.getCourseId() == courseId) {
+                e.setProgress(progress);
+                break;
+            }
+        }
+    }
+
+    public Map<Integer, Integer> getTotalEnrolledPerCourse() {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (Enrollment e : enrollments) {
+            if (!map.containsKey(e.getCourseId())) {
+                map.put(e.getCourseId(), 1);
+            } else {
+                int count = map.get(e.getCourseId());
+                map.put(e.getCourseId(), count + 1);
+            }
+        }
+        return map;
+    }
+
+    public Map<Integer, Integer> getTotalHoursByStudent(CourseDAO courseDAO) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (Enrollment e : enrollments) {
+            Course course = courseDAO.getCourseById(e.getCourseId());
+            if (course == null) continue;
+            int hours = course.getDuration() * e.getProgress() / 100;
+            if (!map.containsKey(e.getStudentId())) {
+                map.put(e.getStudentId(), hours);
+            } else {
+                int total = map.get(e.getStudentId());
+                map.put(e.getStudentId(), total + hours);
+            }
+        }
+        return map;
+    }
+    
+    
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CourseDAO courseDAO = new CourseDAO();
+        StudentDAO studentDAO = new StudentDAO();
+        EnrollmentDAO enrollmentDAO = new EnrollmentDAO();
+
+        while (true) {
+            System.out.println("\n1. Add a new course\n"
+            					+ "2. Add a new student\n"
+            					+ "3. Enroll a student into a course\n"
+            					+ "4. Display all students\n"
+            					+ "5. Display courses for a given student\n"
+            					+ "6. Update course progress for a student\n"
+            					+ "7. Display total enrolled students per course\n"
+            					+ "8. Display student-wise total hours completed\n"
+            					+ "9. Exit");
+            System.out.print("Enter choice: ");
+            int ch = sc.nextInt(); sc.nextLine();
+
+            switch (ch) {
+                case 1:
+                    System.out.print("Course name: ");
+                    String cname = sc.nextLine();
+                    System.out.print("Duration (hrs): ");
+                    int dur = sc.nextInt();
+                    boolean courseAdded=courseDAO.addCourse(cname, dur);
+                    System.out.println(courseAdded ? "Course Added" : "Course Already Exists");
+                    break;
+                case 2:
+                    System.out.print("Student name: ");
+                    String sname = sc.nextLine();
+                    System.out.print("Email: ");
+                    String email = sc.nextLine();
+                    studentDAO.addStudent(sname, email);
+                    break;
+                case 3:
+                	System.out.println( studentDAO.getAllStudents());
+                    System.out.print("Student ID: ");
+                    int sid = sc.nextInt();
+                    System.out.println(courseDAO.getAllCourses());
+                    System.out.print("Course ID: ");
+                    int cid = sc.nextInt();
+                    System.out.print("Progress %: ");
+                    int prog = sc.nextInt();
+                    boolean valid = enrollmentDAO.enrollStudent(sid, cid, prog, courseDAO, studentDAO );
+                    System.out.println(valid ? "Student Enrolled" : "Invalid StudentID or CourseID");
+                    break;
+                case 4:
+                    for (Student s : studentDAO.getAllStudents()) System.out.println(s);
+                    break;
+                case 5:
+                    System.out.print("Student ID: ");
+                    int sid5 = sc.nextInt();
+                    for (Enrollment e : enrollmentDAO.getEnrollmentsByStudent(sid5)) {
+                        Course c = courseDAO.getCourseById(e.getCourseId());
+                        System.out.println(c.getName() + " - " + e.getProgress() + "%");
+                    }
+                    break;
+                case 6:
+                    System.out.print("Student ID: ");
+                    int sid6 = sc.nextInt();
+                    System.out.print("Course ID: ");
+                    int cid6 = sc.nextInt();
+                    System.out.print("New Progress %: ");
+                    int newProg = sc.nextInt();
+                    enrollmentDAO.updateProgress(sid6, cid6, newProg);
+                    break;
+                case 7:
+                    for (Map.Entry<Integer, Integer> entry : enrollmentDAO.getTotalEnrolledPerCourse().entrySet()) {
+                        Course c = courseDAO.getCourseById(entry.getKey());
+                        System.out.println(c.getName() + ": " + entry.getValue() + " students");
+                    }
+                    break;
+                case 8:
+                    for (Map.Entry<Integer, Integer> entry : enrollmentDAO.getTotalHoursByStudent(courseDAO).entrySet()) {
+                        Student s = studentDAO.getStudentById(entry.getKey());
+                        System.out.println(s.getName() + ": " + entry.getValue() + " hrs completed");
+                    }
+                    break;
+                case 9:
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
+}

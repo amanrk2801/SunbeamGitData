@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page 2</h1>
+
+    <button onclick="onClick()">render persons</button>
+    <div id="root"></div>
+
+    <script>
+      const persons = [
+        {
+          name: 'John Doe',
+          age: 25,
+          address: 'New York',
+          email: 'john@test.com',
+        },
+        {
+          name: 'Jane Doe',
+          age: 30,
+          address: 'Los Angeles',
+          email: 'jane@test.com',
+        },
+        {
+          name: 'Sam Smith',
+          age: 22,
+          address: 'Chicago',
+          email: 'sam@test.com',
+        },
+      ]
+
+      function onClick() {
+        // create table header
+        const thead = `
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+        `
+
+        // create the rows
+        let rows = ``
+
+        // run a loop on the persons array
+        for (const person of persons) {
+          rows += `
+                <tr>
+                    <td>${person['name']}</td>
+                    <td>${person['age']}</td>
+                    <td>${person['address']}</td>
+                    <td>${person['email']}</td>
+                </tr>
+            `
+        }
+
+        // create tbody
+        const tbody = `
+            <tbody>
+                ${rows}
+            </tbody>
+        `
+
+        // create table
+        const table = `
+            <table border="1">
+                ${thead}
+                ${tbody}
+            </table>
+        `
+
+        // get the object of div and render table
+        document.getElementById('root').innerHTML = table
+      }
+    </script>
+  </body>
+</html>

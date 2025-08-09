@@ -1,0 +1,47 @@
+﻿@model List<_001DemoMVC.Models.Emp>
+
+<html>
+    <head>
+        <title> Home </title>
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome Home</h1>
+                
+           <hr />
+           <a href="/Home/Create" class="btn btn-primary">Add New Record</a> 
+           <hr />
+           <div class="table-responsive">
+            <table border="1" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.No</td>
+                        <td>@item.Name</td>
+                        <td>@item.Address</td>
+                        <td>
+                            <a class="btn btn-warning" href="/Home/Edit/@item.No">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="/Home/Delete/@item.No">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            </div>
+
+        </div>
+    </body>
+</html>

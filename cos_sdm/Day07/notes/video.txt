@@ -1,0 +1,11 @@
+- git internals
+  https://youtu.be/_Zywyb-PD5g
+
+- shell scripting
+  https://studio.youtube.com/playlist/PLnDkZeFQjSCN1mTN4JEknabefjowqT2FI
+
+- react frontend and backend
+  https://studio.youtube.com/playlist/PLnDkZeFQjSCMJBzCOpt8dpBpllf5BbEIj
+
+- devops end to end project
+  https://studio.youtube.com/playlist/PLnDkZeFQjSCMSDq5dGxl27eVMikPb7iQb

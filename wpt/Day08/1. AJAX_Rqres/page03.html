@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn btn-primary" onclick="getData()">Get Data</button>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function getData() {
+            const tbody = document.getElementById("tbody")
+            fetch("https://reqres.in/api/users")
+                .then((response) => {
+                    console.log(response)
+                    response.json()
+                        .then((result) => {
+                            console.log(result)
+                            const arr = result.data
+                            for (user of arr) {
+                                const row = `
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.email}</td>
+                                        <td>${user.first_name}</td>
+                                        <td>${user.last_name}</td>
+                                    </tr>`
+                                tbody.innerHTML += row
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        })
+                }).catch((error) => {
+                    console.log(error)
+                })
+        }
+    </script>
+</body>
+
+</html>

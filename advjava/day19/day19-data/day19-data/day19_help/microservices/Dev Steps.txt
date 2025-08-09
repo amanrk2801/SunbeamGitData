@@ -1,0 +1,85 @@
+Dev Steps
+1. Create RestaurantService
+ - seperate spring boot app
+ - DB - restaurants
+ - Table - restaurants
+ - Entity - Resaturant
+ DAO,Service n Controller
+
+2. Create RestaurantMenuService
+ - seperate spring boot app
+ - DB - restaurant_menu
+ - Table - food_items
+ - Entity - FoodItem
+ DAO,Service n Controller
+
+3. Obective
+REST client --> restaurant id  -> RestaurantService
+-> MS call -> RestaurantMenuService (using RestTemplate class - synchronous communication) 
+-> Rets List<FoodItemDTO -> RestaurantService
+->  set it Restaurant Menu DTO
+-> ret it to the caller.
+
+3.1 Configure RestRemplate as a spring bean 
+ - in applicaiton class
+3.2 Inject it n RestaurantService 's service layer
+
+3.3 o.s.wwb.client.RestTemplate 
+ - class , abstracts synch HTTP communication
+Method
+-  ResponseEntity<T> getForEntity(String url , Class<T> result , Object ... uriVariables) throws RestClientException
+
+3.4 Test it !
+
+
+4. Disadvantage -
+ In real world  , MS based distributed architecture 
+ - there will be so many instances of the MS running
+ - Avoid hard coding of host n port of the MS
+ - Instead use Centralized Discovery Client
+
+5. Enter Spring Clod Framework
+- Offers ready made implementation of standard MS design patterns
+ - eg Service Registry n Discovery , Load Balancing , MS Communication(sync n async) , Centralised Config Server , Tracing , Circuit Breaker.....
+
+6. Use
+ - Service Registry n Discovery
+ - Steps 
+ - Create Spring boot app
+ - Add dependency starter 
+  - Netflix Eureka server
+ - configure it as Eureka Server (using application.properties)
+   eureka.client.fetch-registry=false 
+   eureka.client.register-with-eureka=false 
+   server.port=8761 (Default port for Eureka Server - can be changed to any free port)
+  - Add annotation on Application
+  @EnableEurekaServer
+
+7. Run Eureka server dashboard
+http://localhost:8761
+ - display dashbaord.
+
+8. Register Restaurant n Menu MS
+ - as Eureka clients
+ - so that 
+ - host n port will be replaced by service names - in the URL
+ - can add load balancing !
+
+9. Dev Steps 
+ - add Eureka client starter depndency 
+   in Restaurant n Menu MS
+ - add property in application.propeties
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+
+ - Eureka discovery client supplies in readymade manner
+ - client side load balancing .
+
+10. To use it
+ @LoadBalanced on RestTemplate Bean
+
+
+
+
+
+
+

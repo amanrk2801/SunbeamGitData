@@ -1,0 +1,14 @@
+D:\KaradDotNetDemos\Demo\11DemoFileIO\bin\Debug\net7.0\11DemoFileIO.exe
+D:\KaradDotNetDemos\Demo\11DemoFileIO\bin\Debug\net7.0\11DemoFileIO.deps.json
+D:\KaradDotNetDemos\Demo\11DemoFileIO\bin\Debug\net7.0\11DemoFileIO.runtimeconfig.json
+D:\KaradDotNetDemos\Demo\11DemoFileIO\bin\Debug\net7.0\11DemoFileIO.dll
+D:\KaradDotNetDemos\Demo\11DemoFileIO\bin\Debug\net7.0\11DemoFileIO.pdb
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.GeneratedMSBuildEditorConfig.editorconfig
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.AssemblyInfoInputs.cache
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.AssemblyInfo.cs
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.csproj.CoreCompileInputs.cache
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.dll
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\refint\11DemoFileIO.dll
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.pdb
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\11DemoFileIO.genruntimeconfig.cache
+D:\KaradDotNetDemos\Demo\11DemoFileIO\obj\Debug\net7.0\ref\11DemoFileIO.dll

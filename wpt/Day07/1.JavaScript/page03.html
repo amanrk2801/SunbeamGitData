@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1() {
+            const h1 = document.getElementById("h1")
+            const name = prompt("Enter the name - ")
+            console.log(name)
+            h1.innerText = "Hello " + name
+        }
+    </script>
+</head>
+
+<body onload="f1()">
+    <h1 id="h1">Hello</h1>
+</body>
+
+</html>

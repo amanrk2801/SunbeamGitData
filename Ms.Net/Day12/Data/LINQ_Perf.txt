@@ -1,0 +1,27 @@
+NORMAL CALL
+ - 1023  X 100 = 102300
+
+Via MyDelegate
+ - 1055   X 100 = 105500
+
+Via Anonymous Method
+ - 796	  X 100 = 79600
+
+Via Anonymous Method : FUNC
+ - 581    X 100 = 58100
+
+Via Lambada Method : FUNC
+ - 440 (Create, Compile = 436, Execution =4)
+
+Via Expression Tree 
+ Create, Compile = 436 X1 = 436  
+ Execution =4 X 100 = 400
+ --------------------------
+ Total for 100 time call = 836
+ 
+- 4
+
+
+
+
+

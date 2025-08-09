@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name
+            }
+            display() {
+                console.log("Name - " + this.name)
+            }
+        }
+
+        class Employee extends Person {
+            constructor(id, name, salary) {
+                super(name)
+                this.id = id
+                this.salary = salary
+            }
+
+            display() {
+                console.log("id - " + this.id)
+                super.display()
+                console.log("salary - " + this.salary)
+            }
+        }
+
+        const e1 = new Employee(1, "Anil", 10000)
+        console.log(e1)
+        e1.display()
+
+    </script>
+</body>
+
+</html>

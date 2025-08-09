@@ -1,0 +1,85 @@
+Project Objective - 
+
+To fetch order details for specific restaurant by restaurant name
+i/p - restaurant name
+o/p - DTO containing
+ restaurant name, food item name , food item price, quantity
+
+
+You will need to join 3 tables.
+
+Restaurant
+
+FoodItem
+
+OrderLine
+
+A single Restaurant has many FoodItems, and an OrderLine represents a particular FoodItem being ordered.
+
+ Entity Relationships
+Restaurant (1) ⟶ (M) FoodItem
+
+FoodItem (1) ⟶ (M) OrderLine
+
+1. Restaurant.java
+@Entity
+public class Restaurant {
+    .......
+
+    @OneToMany(mappedBy = "myRestaurant")
+    private List<FoodItem> foodItems=new ArrayList<>();
+}
+2. FoodItem.java
+@Entity
+public class FoodItem {
+    .....
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant myRestaurant;
+
+    @OneToMany(mappedBy = "foodItem")
+    private List<OrderLine> OrderLines;
+}
+3. OrderLine.java
+
+@Entity
+public class OrderLine {
+    .....
+
+    private int quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "food_item_id")
+    private FoodItem foodItem;
+}
+
+ Custom DTO
+@Getter
+@Setter
+public class OrderLineDetailsDTO{
+    String restaurantName,
+    String foodName,
+    double price,
+    int quantity;
+
+}
+
+ Repository with Custom Query
+
+public interface OrderLineRepository extends JpaRepository<OrderLine, Long> {
+
+    @Query("
+        select new com.cdac.dto.OrderLineDetailsDTO(
+            r.name, f.name, f.price, o.quantity
+        )
+        from OrderLine o
+        join o.foodItem f
+        join f.myrestaurant r
+        WHERE r.name = :restaurantName
+    ")
+    List<OrderLineDetailsDTO> findDetailsByRestaurantName( String restaurantName);
+}
+
+From service layer , invoke - 
+OrderLineRepository.findDetailsByRestaurantName("Vaishali");

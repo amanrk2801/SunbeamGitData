@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body onload="onPageLoad()">
+    <h2>Rendering Object</h2>
+    <div id="root"></div>
+    <script type="text/babel">
+      function onPageLoad() {
+        const car = {
+          model: 'triber',
+          company: 'renault',
+          price: 12,
+        }
+
+        const div = (
+          <div>
+            <div>model: {car['model']}</div>
+            <div>company: {car['company']}</div>
+            <div>price: {car['price']}</div>
+          </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('root')).render(div)
+      }
+    </script>
+  </body>
+</html>

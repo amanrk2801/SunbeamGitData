@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" onclick="getUsers()">Get Users</button>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>uid</th>
+                            <th>name</th>
+                            <th>age</th>
+                        </tr>
+                    </thead>
+                    <tbody id="utbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" onclick="getProducts()">Get Products</button>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>uid</th>
+                            <th>name</th>
+                            <th>age</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ptbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getUsers() {
+            const utbody = document.getElementById("utbody")
+            fetch("http://localhost:4000/user")
+                .then((response) => {
+                    console.log(response.json())
+                    response.json()
+                        .then((arr) => {
+                            for (user of arr) {
+                                const row = `
+                                <tr>    
+                                    <td>${user.uid}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.age}</td>
+                                </tr>`
+                                utbody.innerHTML += row
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        })
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        }
+
+        async function getProducts() {
+            try {
+                const ptbody = document.getElementById("ptbody")
+                const response = await fetch('http://localhost:4000/product')
+                const arr = await response.json()
+                for (product of arr) {
+                    const row = `
+                            <tr>    
+                                <td>${product.pid}</td>
+                                <td>${product.name}</td>
+                                <td>${product.price}</td>
+                            </tr>`
+                    ptbody.innerHTML += row
+                }
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+    </script>
+</body>
+
+</html>

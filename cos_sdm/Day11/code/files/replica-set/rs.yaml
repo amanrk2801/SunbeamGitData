@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs1
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      type: mypod
+  template:
+    metadata:
+      name: pod1
+      labels:
+        type: mypod
+    spec:
+      containers:
+      - name: container1
+        image: httpd
+        ports:
+        - containerPort: 80

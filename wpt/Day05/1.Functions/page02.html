@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            console.log("Inside OG f1()")
+        }
+
+        f1() // f1 -> Copy
+
+        function f1() {
+            console.log("Inside Copy f1()")
+        }
+
+        f1() // f1 -> Copy
+    </script>
+</body>
+
+</html>

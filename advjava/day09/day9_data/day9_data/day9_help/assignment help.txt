@@ -1,0 +1,47 @@
+Inheritance - 
+ @MappedSuperclass
+ - id , creation date | time |ts ,updation date|tm | ts ,
+@Version - private int version (optimistic locking) - optional
+
+Category   1 <-----> *    Product
+
+Category - one , parent , inverse
+
+
+Product -many , child , owning(=containign FK)
+
+Category extends BaseEntity
+ - name , desc.....
++ 
+@OneToMany(mappedBy="productCategory")
+private List<Product> products=new ArrayList<>();
+
+
+
+Product extends BaseEntity
+- name, price ....
++
+@ManyToOne
+@JoinColumn(name="category_id")
+private Category productCategory;
+
+Solve 
+1. add catgeory
+ - category details
+ - session.persist(newCategory) - commit
+2. add product to category
+ -category id + product details
+ - get catgeory from id
+  session.get(...)
+ -not null
+  - 
+
+As per the reco from Gavin King
+- For a bi dir asso
+ - add helper methods in the Entity layer
+  - to add child
+  - to remove child
+
+Category 
+ - addProduct
+ - removeProduct 

@@ -1,0 +1,11 @@
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\bin\Debug\net8.0\16ApnaAttributes.deps.json
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\bin\Debug\net8.0\16ApnaAttributes.dll
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\bin\Debug\net8.0\16ApnaAttributes.pdb
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.GeneratedMSBuildEditorConfig.editorconfig
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.AssemblyInfoInputs.cache
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.AssemblyInfo.cs
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.csproj.CoreCompileInputs.cache
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.dll
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\refint\16ApnaAttributes.dll
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\16ApnaAttributes.pdb
+D:\KaradDotNetDemos\Demo\16ApnaAttributes\obj\Debug\net8.0\ref\16ApnaAttributes.dll

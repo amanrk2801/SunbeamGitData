@@ -1,0 +1,21 @@
+Scaffolding  : Generate Template based Views / Controllers
+- HTML Helper - asp-action, @html.validationFor, DisplayNameFor, DisplayFor
+- Http Verbs : GET, POST
+- IFormCollection, ModelBinder : How it works
+
+Server Side Validation : Attribute based validation
+- ModelState.IsValid
+- Custom Validation
+- BuildInAttributes : required, range, regularExpression
+
+
+ViewData , ViewBag - Usage
+Filters
+Action , Result Filter
+
+----------------------------------------------------------------------
+Layout Pages a.k.a. Master Pages
+Show / Collect data from Master Pages in Controller Methods
+Write Web APIs
+Handle CORs errors
+Integrate Web API with React JS Application 

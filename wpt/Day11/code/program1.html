@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page1</h1>
+
+    <button onclick="onGreetUser()">greet user</button>
+    <div id="root1"></div>
+    <div id="root2"></div>
+    <div id="root3"></div>
+
+    <script>
+      // variable declaration
+      const username = 'John Doe'
+
+      function onGreetUser() {
+        // get the object of div element
+        const div1 = document.getElementById('root1')
+
+        // update the div with required message
+        // div.innerHTML = '<h2>Hello ' + username + '!</h2>'
+        div1.innerHTML = `<h2>Hello ${username}!</h2>`
+
+        const div2 = document.getElementById('root2')
+        div2.innerHTML = `<h2>Hello ${username}!</h2>`
+
+        document.getElementById(
+          'root3'
+        ).innerHTML = `<h2>Hello ${username}!</h2>`
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="mydiv"></div>
+    <br>
+    <button onclick="hideDiv()">hide</button>
+    <button onclick="showDiv()">show</button>
+    <hr>
+    <button onclick="slideUp()">Slide Up</button>
+    <button onclick="slideDown()">Slide Down</button>
+    <hr>
+    <button onclick="animation1()">Animation1</button>
+    <button onclick="animation2()">Animation2</button>
+    <button onclick="animation3()">Animation3</button>
+
+    <script>
+        function showDiv() {
+            // const div = document.getElementById("mydiv")
+            // div.style.display = "block"
+
+            // $("#mydiv").css("display", "block")
+
+            $("#mydiv").show()
+        }
+
+        function hideDiv() {
+            // const div = document.getElementById("mydiv")
+            // div.style.display = "none"
+
+            // $("#mydiv").css("display", "none")
+
+            $("#mydiv").hide()
+
+        }
+
+        function slideUp() {
+            $("#mydiv").slideUp()
+        }
+
+        function slideDown() {
+            $("#mydiv").slideDown()
+        }
+
+        function animation1() {
+            $("#mydiv").animate({
+                "width": "200px"
+            }, 2000)
+        }
+
+        function animation2() {
+            $("#mydiv").animate({
+                "width": "200px",
+                "height": "200px"
+            }, 2000)
+        }
+
+        function animation3() {
+            $("#mydiv")
+                .animate({
+                    "width": "300px"
+                }, 2000)
+                .animate({
+                    "height": "300px"
+                }, 2000)
+                .animate({
+                    "width": "100px"
+                }, 2000)
+                .animate({
+                    "height": "100px"
+                }, 2000)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="promise_based_internal_library.js"></script>
+</head>
+
+<body onload="getData()">
+
+    <script>
+        // Junior developer  code
+        //async..await
+        async function getData() {
+            try {
+                const empdata = await getEmployeeById(2)
+                console.log(empdata)
+                const deptdata = await getDeptDetailsById(empdata.deptno)
+                console.log(deptdata)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

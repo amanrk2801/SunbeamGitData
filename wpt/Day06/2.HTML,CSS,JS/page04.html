@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is h1</h1>
+    <a href="">Campus</a>
+    <p>This is para 1</p>
+    <div>
+        <p>This is para 2</p>
+    </div>
+
+    <p>This is para 3</p>
+    <button onclick="changeH1()">Change H1</button>
+    <button onclick="changeP1()">Change p1</button>
+    <button onclick="changeP2()">Change p2</button>
+    <button onclick="changeP3()">Change p3</button>
+
+    <script>
+        function changeH1() {
+            // alert("Button clicked")
+            document.firstElementChild.lastElementChild.firstElementChild.innerText = "Hello"
+        }
+
+        function changeP1() {
+            document.firstElementChild.lastElementChild.children[1].innerText = "Welcome To Sunbeam"
+        }
+
+        function changeP2() {
+            let p = document.firstElementChild.lastElementChild.children[2].firstElementChild
+            //console.dir(p)
+            p.innerText = "Pune, Karad"
+            p.style.color = "Red"
+        }
+
+        function changeP3() {
+            document.firstElementChild.lastElementChild.children[3].innerText = "Thankyou, Bye"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(name) {
+            this.name = name
+        }
+        function displayPerson() {
+            console.log("name - " + this.name)
+        }
+        Person.prototype.displayPerson = displayPerson
+
+        const p1 = new Person("Anil")
+        console.log(p1)
+        p1.displayPerson()
+
+        function Employee(id, name, salary) {
+            Person.call(this, name)
+            this.id = id
+            this.salary = salary
+        }
+
+        function displayEmployee() {
+            console.log("id - " + this.id)
+            // If names are same then we have to call the person call display using below way
+            //Object.getPrototypeOf(Employee.prototype).display.call(this)
+            console.log("salary - " + this.salary)
+        }
+
+
+        Employee.prototype.__proto__ = Object.create(Person.prototype)
+        Employee.prototype.displayEmployee = displayEmployee
+
+        const e1 = new Employee(1, "Anil", 10000)
+        console.log(e1)
+        // e1.displayPerson()
+        e1.displayEmployee()
+    </script>
+</body>
+
+</html>

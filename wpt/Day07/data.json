@@ -1,0 +1,32 @@
+[
+    {
+        "empid": 1,
+        "name": "Anil",
+        "salary": 10000
+    },
+    {
+        "empid": 2,
+        "name": "Mukesh",
+        "salary": 20000
+    },
+    {
+        "empid": 3,
+        "name": "Ramesh",
+        "salary": 30000
+    },
+    {
+        "empid": 4,
+        "name": "Suresh",
+        "salary": 40000
+    },
+    {
+        "empid": 5,
+        "name": "Ram",
+        "salary": 50000
+    },
+    {
+        "empid": 6,
+        "name": "Sham",
+        "salary": 60000
+    }
+]

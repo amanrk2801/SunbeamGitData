@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association</title>
+</head>
+
+<body>
+    <script>
+        class Date {
+            constructor(day, month, year) {
+                this.day = day
+                this.month = month
+                this.year = year
+            }
+            displayDate() {
+                console.log(this.day + "/" + this.month + "/" + this.year)
+            }
+        }
+
+        const d1 = new Date(1, 1, 2000)
+        console.log(d1)
+        d1.displayDate()
+
+        class Person {
+            constructor(name, day, month, year) {
+                this.name = name;
+                this.dob = new Date(day, month, year)
+            }
+
+            displayPerson() {
+                console.log("Name - " + this.name)
+                console.log("Date of Birth - ")
+                this.dob.displayDate()
+            }
+        }
+
+        const p1 = new Person("Anil", 2, 2, 2002)
+        console.log(p1)
+        p1.displayPerson()
+
+    </script>
+</body>
+
+</html>

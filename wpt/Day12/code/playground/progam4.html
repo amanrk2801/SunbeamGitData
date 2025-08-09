@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body onload="onPageLoad()">
+    <h2>Rendering array with objects</h2>
+    <div id="root"></div>
+    <script type="text/babel">
+      function onPageLoad() {
+        const products = [
+          {
+            id: 1,
+            title: 'product 1',
+            price: 100,
+            description: 'product 1 description',
+          },
+          {
+            id: 2,
+            title: 'product 2',
+            price: 200,
+            description: 'product 2 description',
+          },
+          {
+            id: 3,
+            title: 'product 3',
+            price: 300,
+            description: 'product 3 description',
+          },
+          {
+            id: 4,
+            title: 'product 4',
+            price: 400,
+            description: 'product 4 description',
+          },
+          {
+            id: 5,
+            title: 'product 5',
+            price: 500,
+            description: 'product 5 description',
+          },
+        ]
+        const div = (
+          <div>
+            {products.map((product) => {
+              return (
+                <div>
+                  <div>id: {product['id']}</div>
+                  <div>title: {product['title']}</div>
+                  <div>price: {product['price']}</div>
+                  <div>description: {product['description']}</div>
+                </div>
+              )
+            })}
+          </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('root')).render(div)
+      }
+    </script>
+  </body>
+</html>

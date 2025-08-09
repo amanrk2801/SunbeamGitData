@@ -1,0 +1,126 @@
+Restaurant 1<----->* FoodItem
+eg : FoodItem n Restaurant
+Details -
+Restaurant extends BaseEntity
+private String name;
+private String address;
+private String city;
+private String description;
++
+//Restaurant 1 ----> * FoodItem
+@OneToMany
+//Project Tip - Always init collection based property to EMPTY collection(to avoid NPException)
+private List<FoodItem> foodItems=new ArrayList<>();
+
+Food Item -
+
+private String itemName;
+private String itemDescription;
+private boolean isVeg;
+private int price;
++
+//FoodItem *--->1 Restaurant
+@ManyToOne
+private Restaurant myRestaurant;
+
+
+Restaurant - one , parent , non -owning (inverse)
+Food Item - many , child, owning side (the side containing FK or join table )
+
+In one-many , many side is ALWAYS owning side of the association (to maintain normalization) n one side is - inverse side of the asso.
+
+JPA annotations for any type of association
+@OneToMany
+@ManyToOne
+@OneToOne
+@ManyToMany
+
+
+Project Tip
+Exclude association based properties from toString
+ - to avoid infinite recursion(stack overflow !)
+
+Problem 
+- un necessary additional join table is created(eg -restaurants_food_items)
+
+Cause - Hibernate(JPA implementor) DOES NOT auto understand , in Bi dir associtation , which is the owning side (FK) n which is the inverse side.
+
+Solution - Add mappedBy property in @OneToMany annotation
+where - inverse side of association
+what should the value of mappedBy property 
+- name of the property , from the owning side.
+
+Recommendation -
+To customize FK column name ,add
+@JoinColumn(name="restaurant_id")
+private Restaurant myRestaurant;
+
+
+
+ How to add composite unique constraint over multiple columns
+ eg - combination of restaurant_id n food item name - unique
+ 
+@Table(name = "food_items",uniqueConstraints 
+= @UniqueConstraint
+(columnNames = {"item_name","restaurant_id"}))
+
+Use case
+1. Add new restuarant
+i/p - name , address, desc , city ....
+o/p - mesg
+
+
+2. Add new food item to the restaurant
+i/p - restaurant id  + food item details
+o/p - mesg
+
+In order to establish a bi dir association , between the entities
+- as per Founder's suggestion
+- add helper methods in the parent Entity class(eg - Restaurant)
+ - to add | remove child reference
+ eg - addFoodItem , removeFoodItem
+
+Problem(limitation)
+Without explicitly calling session.persist(foodItem), 
+ - hibernate DOES not auto insert a rec in food_items table
+
+If you want to delete particular restaurant details 
+ - first you will have to delete child recs (i.e from food_items )
+ n then delete parent record.
+
+Similar problem - while updation.
+
+Solution - Use cascading 
+What is it ?
+ - JPA's capability of automatically propagating changes from one entity(eg - Restaurant) to associated entity (eg - FoodItem)
+How ?
+@OneToMany(mappedBy = "myRestaurant",
+			cascade = CascadeType.ALL) //propagate ALL operations from src -> target entity
+	private List<FoodItem> foodItems = new ArrayList<>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

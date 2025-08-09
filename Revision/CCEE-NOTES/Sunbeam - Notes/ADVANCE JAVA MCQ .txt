@@ -1,0 +1,1038 @@
+﻿. Which of the following is not an Enterprise Beans type?
+a) Doubleton
+b) Singleton
+c) Stateful
+d) Stateless
+View Answer
+
+Answer: a
+Explanation: Stateful, Stateless and Singleton are session beans.
+2. Which of the following is not true about Java beans?
+a) Implements java.io.Serializable interface
+b) Extends java.io.Serializable class
+c) Provides no argument constructor
+d) Provides setter and getter methods for its properties
+View Answer
+
+Answer: b
+Explanation: java.io.Serializable is not a class. Instead it is an interface. Hence it cannot be extended.
+3. Which file separator should be used by MANIFEST file?
+a) /
+b) \
+c) –
+d) //
+View Answer
+
+Answer: a
+Explanation: MANIFEST file uses classes using / file separator.
+Note: Join free Sanfoundry classes at Telegram or Youtube
+advertisement
+
+4. Which of the following is correct error when loading JAR file with duplicate name?
+a) java.io.NullPointerException
+b) java.lang.ClassNotFound
+c) java.lang.ClassFormatError
+d) java.lang.DuplicateClassError
+View Answer
+
+Answer: c
+Explanation: java.lang.ClassFormatError: Duplicate Name error is thrown when .class file in the JAR contains a class whose class name is different from the expected name.
+5. Java Beans are extremely secured?
+a) True
+b) False
+View Answer
+
+Answer: b
+Explanation: JavaBeans do not add any security features to the Java platform.
+Take Java Programming Tests Now!
+6. Which of the following is not a feature of Beans?
+a) Introspection
+b) Events
+c) Persistence
+d) Serialization
+View Answer
+
+Answer: d
+Explanation: Serialization is not the feature of Java Beans. Introspection, Customization, Events, Properties and Persistence are the features.
+7. What is the attribute of java bean to specify scope of bean to have single instance per Spring IOC?
+a) prototype
+b) singleton
+c) request
+d) session
+View Answer
+
+Answer: b
+Explanation: Singleton scope of bean specifies only one instance per spring IOC container. This is the default scope.
+8. Which attribute is used to specify initialization method?
+a) init
+b) init-method
+c) initialization
+d) initialization-method
+View Answer
+
+Answer: b
+Explanation: init-method is used to specify the initialization method.
+ <bean id = "helloWorld" class = "com.bean.HelloWorld" init-method = "init" />
+9. Which attribute is used to specify destroy method?
+a) destroy
+b) destroy-method
+c) destruction
+d) destruction-method
+View Answer
+
+Answer: b
+Explanation: destroy-method is used to specify the destruction method.
+ <bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld" destroy-method = "destroy" />
+10. How to specify autowiring by name?
+a) @Qualifier
+b) @Type
+c) @Constructor
+d) @Name
+View Answer
+
+Answer: a
+Explanation: Different beans of the same class are identified by name.
+
+1. Which of the following contains both date and time?
+a) java.io.date
+b) java.sql.date
+c) java.util.date
+d) java.util.dateTime
+View Answer
+
+Answer: d
+Explanation: java.util.date contains both date and time. Whereas, java.sql.date contains only date.
+2. Which of the following is advantage of using JDBC connection pool?
+a) Slow performance
+b) Using more memory
+c) Using less memory
+d) Better performance
+View Answer
+
+Answer: d
+Explanation: Since the JDBC connection takes time to establish. Creating connection at the application start-up and reusing at the time of requirement, helps performance of the application.
+3. Which of the following is advantage of using PreparedStatement in Java?
+a) Slow performance
+b) Encourages SQL injection
+c) Prevents SQL injection
+d) More memory usage
+View Answer
+
+Answer: c
+Explanation: PreparedStatement in Java improves performance and also prevents from SQL injection.
+Note: Join free Sanfoundry classes at Telegram or Youtube
+advertisement
+
+4. Which one of the following contains date information?
+a) java.sql.TimeStamp
+b) java.sql.Time
+c) java.io.Time
+d) java.io.TimeStamp
+View Answer
+
+Answer: a
+Explanation: java.sql.Time contains only time. Whereas, java.sql.TimeStamp contains both time and date.
+5. What does setAutoCommit(false) do?
+a) commits transaction after each query
+b) explicitly commits transaction
+c) does not commit transaction automatically after each query
+d) never commits transaction
+View Answer
+
+Answer: c
+Explanation: setAutoCommit(false) does not commit transaction automatically after each query. That saves a lot of time of the execution and hence improves performance.
+Take Java Programming Mock Tests - Chapterwise!
+Start the Test Now: Chapter 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+6. Which of the following is used to call stored procedure?
+a) Statement
+b) PreparedStatement
+c) CallableStatment
+d) CalledStatement
+View Answer
+
+Answer: c
+Explanation: CallableStatement is used in JDBC to call stored procedure from Java program.
+7. Which of the following is used to limit the number of rows returned?
+a) setMaxRows(int i)
+b) setMinRows(int i)
+c) getMaxrows(int i)
+d) getMinRows(int i)
+View Answer
+
+Answer: a
+Explanation: setMaxRows(int i) method is used to limit the number of rows that the database returns from the query.
+8. Which of the following is method of JDBC batch process?
+a) setBatch()
+b) deleteBatch()
+c) removeBatch()
+d) addBatch()
+View Answer
+
+Answer: d
+Explanation: addBatch() is a method of JDBC batch process. It is faster in processing than executing one statement at a time.
+9. Which of the following is used to rollback a JDBC transaction?
+a) rollback()
+b) rollforward()
+c) deleteTransaction()
+d) RemoveTransaction()
+View Answer
+
+Answer: a
+Explanation: rollback() method is used to rollback the transaction. It will rollback all the changes made by the transaction.
+10. Which of the following is not a JDBC connection isolation levels?
+a) TRANSACTION_NONE
+b) TRANSACTION_READ_COMMITTED
+c) TRANSACTION_REPEATABLE_READ
+d) TRANSACTION_NONREPEATABLE_READ
+View Answer
+
+Answer: d
+Explanation: TRANSACTION_NONREPEATABLE_READ is not a JDBC connection isolation level.
+
+1. Which of the below is not a valid design pattern?
+a) Singleton
+b) Factory
+c) Command
+d) Java
+View Answer
+
+Answer: d
+Explanation: Design pattern is a general repeatable solution to a commonly occurring problem in software design. There are various patterns available for use in day to day coding problems.
+2. Which of the below author is not a part of GOF (Gang of Four)?
+a) Erich Gamma
+b) Gang Pattern
+c) Richard Helm
+d) Ralph Johnson
+View Answer
+
+Answer: b
+Explanation: Four authors named Richard Helm, Erich Gamma, Ralph Johnson and John Vlissides published a book on design patterns. This book initiated the concept of Design Pattern in Software development. They are known as Gang of Four (GOF).
+3. Which of the below is not a valid classification of design pattern?
+a) Creational patterns
+b) Structural patterns
+c) Behavioural patterns
+d) Java patterns
+View Answer
+
+Answer: d
+Explanation: Java patterns is not a valid classification of design patterns. The correct one is J2EE patterns.
+Sanfoundry Certification Contest of the Month is Live. 100+ Subjects. Participate Now!
+advertisement
+
+4. Which design pattern provides a single class which provides simplified methods required by client and delegates call to those methods?
+a) Adapter pattern
+b) Builder pattern
+c) Facade pattern
+d) Prototype pattern
+View Answer
+
+Answer: c
+Explanation: Facade pattern hides the complexities of the system and provides an interface to the client using which client can access the system.
+5. Which design pattern ensures that only one object of particular class gets created?
+a) Singleton pattern
+b) Filter pattern
+c) State pattern
+d) Bridge pattern
+View Answer
+
+Answer: a
+Explanation: Singleton pattern involves a single class which is responsible to create an object while making sure that only one object gets created. This class provides a way to access the only object which can be accessed directly without need to instantiate another object of the same class.
+Check this: Java Books | Programming Books
+6. Which design pattern suggests multiple classes through which request is passed and multiple but only relevant classes carry out operations on the request?
+a) Singleton pattern
+b) Chain of responsibility pattern
+c) State pattern
+d) Bridge pattern
+View Answer
+
+Answer: b
+Explanation: Chain of responsibility pattern creates a chain of receiver objects for a particular request. The sender and receiver of a request are decoupled based on the type of request. This pattern is one of the behavioral patterns.
+7. Which design pattern represents a way to access all the objects in a collection?
+a) Iterator pattern
+b) Facade pattern
+c) Builder pattern
+d) Bridge pattern
+View Answer
+
+Answer: a
+Explanation: Iterator pattern represents a way to access the elements of a collection object in sequential manner without the need to know its underlying representation.
+8. What does MVC pattern stands for?
+a) Mock View Control
+b) Model view Controller
+c) Mock View Class
+d) Model View Class
+View Answer
+
+Answer: b
+Explanation: Model represents an object or JAVA POJO carrying data.View represents the visualization of the data that model contains. The controller acts on both model and view. It is usually used in web development.
+9. Is design pattern a logical concept.
+a) True
+b) False
+View Answer
+
+Answer: a
+Explanation: Design pattern is a logical concept. Various classes and frameworks are provided to enable users to implement these design patterns.
+10. Which design pattern works on data and action taken based on data provided?
+a) Command pattern
+b) Singleton pattern
+c) MVC pattern
+d) Facade pattern
+View Answer
+
+Answer: a
+
+
+1. Which mode allows us to run program interactively while watching source code and variables during execution?
+a) safe mode
+b) debug mode
+c) successfully run mode
+d) exception mode
+View Answer
+
+Answer: b
+Explanation: Debug mode allows us to run program interactively while watching source code and variables during execution.
+2. How can we move from one desired step to another step?
+a) breakpoints
+b) System.out.println
+c) logger.log
+d) logger.error
+View Answer
+
+Answer: a
+Explanation: Breakpoints are inserted in code. We can move from one point to another in the execution of a program.
+3. Which part stores the program arguments and startup parameters?
+a) debug configuration
+b) run configuration
+c) launch configuration
+d) project configuration
+View Answer
+
+Answer: c
+Explanation: Launch configuration stores the startup class, program arguments and vm arguments.
+Sanfoundry Certification Contest of the Month is Live. 100+ Subjects. Participate Now!
+advertisement
+
+4. How to deep dive into the execution of a method from a method call?
+a) F3
+b) F5
+c) F7
+d) F8
+View Answer
+
+Answer: b
+Explanation: F5 executes currently selected line and goes to the next line in the program. If the selected line is a method call, debugger steps into the associated code.
+5. Which key helps to step out of the caller of currently executed method?
+a) F3
+b) F5
+c) F7
+d) F8
+View Answer
+
+Answer: c
+Explanation: F7 steps out to the caller of the currently executed method. This finishes the execution of the current method and returns to the caller of this method.
+Check this: Java Books | Programming MCQs
+6. Which view allows us to delete and deactivate breakpoints and watchpoints?
+a) breakpoint view
+b) variable view
+c) debug view
+d) logger view
+View Answer
+
+Answer: a
+Explanation: The Breakpoints view allows us to delete and deactivate breakpoints and watchpoints. We can also modify their properties.
+7. What is debugging an application which runs on another java virtual machine on another machine?
+a) virtual debugging
+b) remote debugging
+c) machine debugging
+d) compiling debugging
+View Answer
+
+Answer: b
+Explanation: Remote debugging allows us to debug applications which run on another Java virtual machine or even on another machine. We need to set certain flags while starting the application.
+java -Xdebug -Xnoagent \
+-Djava.compiler=NONE \
+-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005.
+8. What happens when the value of variable change?
+a) changed value pop on the screen
+b) variable changes are printed in logs
+c) dump of variable changes are printed on the screen on end of execution
+d) variable tab shows variables highlighted when values change
+View Answer
+
+Answer: d
+Explanation: When a variable value changes, the value in variable tab is highlighted yellow in eclipse.
+9. Which perspective is used to run a program in debug view?
+a) java perspective
+b) eclipse perspective
+c) debug perspective
+d) jdbc perspective
+View Answer
+
+Answer: c
+Explanation: We can switch from one perspective to another. Debug perspective shows us the breakpoints, variables, etc.
+10. How does eclipse provide the capability for debugging browser actions?
+a) internal web browser
+b) chrome web browser
+c) firefox web browser
+d) internet explorer browser
+View Answer
+
+Answer: a
+Explanation: Eclipse provides internal web browser to debug browser actions.
+
+1. Servlet are used to program which component in a web application?
+a) client
+b) server
+c) tomcat
+d) applet
+View Answer
+
+Answer: b
+Explanation: A servlet class extends the capabilities of servers that host applications which are accessed by way of a request-response programming model.
+2. Which component can be used for sending messages from one application to another?
+a) server
+b) client
+c) mq
+d) webapp
+View Answer
+
+Answer: c
+Explanation: Messaging is a method of communication between software components or applications. MQ can be used for passing message from sender to receiver.
+3. How are java web applications packaged?
+a) jar
+b) war
+c) zip
+d) both jar and war
+View Answer
+
+Answer: d
+Explanation: war are deployed on apache servers or tomcat servers. With Spring boot and few other technologies tomcat is brought on the machine by deploying jar.
+Subscribe Now: Java Newsletter | Important Subjects Newsletters
+advertisement
+
+4. How can we connect to database in a web application?
+a) oracle sql developer
+b) toad
+c) JDBC template
+d) mysql
+View Answer
+
+Answer: c
+Explanation: JDBC template can be used to connect to database and fire queries against it.
+5. How can we take input text from user in HTML page?
+a) input tag
+b) inoutBufferedReader tag
+c) meta tag
+d) scanner tag
+View Answer
+
+Answer: a
+Explanation: HTML provides various user input options like input, radio, text, etc.
+Get Free Certificate of Merit in Java Programming Now!
+6. Which of the below is not a javascript framework for UI?
+a) Vaadin
+b) AngularJS
+c) KendoUI
+d) Springcore
+View Answer
+
+Answer: d
+Explanation: Springcore is not a javascript framework. It is a comprehensive programming and configuration model for enterprise applications based on java.
+7. Which of the below can be used to debug front end of a web application?
+a) Junit
+b) Fitnesse
+c) Firebug
+d) Mockito
+View Answer
+
+Answer: c
+Explanation: Firebug integrates with firefox and enables to edit, debug and monitor CSS, HTML and javascript of any web page.
+8. What type of protocol is HTTP?
+a) stateless
+b) stateful
+c) transfer protocol
+d) information protocol
+View Answer
+
+Answer: a
+Explanation: HTTP is a stateless protocol. It works on request and response mechanism and each request is an independent transaction.
+9. What does MIME stand for?
+a) Multipurpose Internet Messaging Extension
+b) Multipurpose Internet Mail Extension
+c) Multipurpose Internet Media Extension
+d) Multipurpose Internet Mass Extension
+View Answer
+
+Answer: b
+Explanation: MIME is an acronym for Multi-purpose Internet Mail Extensions. It is used for classifying file types over the Internet. It contains type/subtype e.g. application/msword.
+10. What is the storage capacity of single cookie?
+a) 2048 MB
+b) 2048 bytes
+c) 4095 bytes
+d) 4095 MB
+View Answer
+
+Answer: c
+
+1. How does applet and servlet communicate?
+a) HTTP
+b) HTTPS
+c) FTP
+d) HTTP Tunneling
+View Answer
+
+Answer: d
+Explanation: Applet and Servlet communicate through HTTP Tunneling.
+2. In CGI, process starts with each request and will initiate OS level process.
+a) True
+b) False
+View Answer
+
+Answer: a
+Explanation: A new process is started with each client request and that corresponds to initiate a heavy OS level process for each client request.
+3. Which class provides system independent server side implementation?
+a) Socket
+b) ServerSocket
+c) Server
+d) ServerReader
+View Answer
+
+Answer: b
+Explanation: ServerSocket is a java.net class which provides system independent implementation of server side socket connection.
+Subscribe Now: Java Newsletter | Important Subjects Newsletters
+advertisement
+
+4. What happens if ServerSocket is not able to listen on the specified port?
+a) The system exits gracefully with appropriate message
+b) The system will wait till port is free
+c) IOException is thrown when opening the socket
+d) PortOccupiedException is thrown
+View Answer
+
+Answer: c
+Explanation: public ServerSocket() creates an unbound server socket. It throws IOException if specified port is busy when opening the socket.
+5. What does bind() method of ServerSocket offer?
+a) binds the serversocket to a specific address (IP Address and port)
+b) binds the server and client browser
+c) binds the server socket to the JVM
+d) binds the port to the JVM
+View Answer
+
+Answer: a
+Explanation: bind() binds the server socket to a specific address (IP Address and port). If address is null, the system will pick an ephemeral port and valid local address to bind socket.
+Get Free Certificate of Merit in Java Programming Now!
+6. Which of the below are common network protocols?
+a) TCP
+b) UDP
+c) TCP and UDP
+d) CNP
+View Answer
+
+Answer: c
+Explanation: Transmission Control Protocol(TCP) and User Datagram Protocol(UDP) are the two common network protocol. TCP/IP allows reliable communication between two applications. UDP is connection less protocol.
+7. Which class represents an Internet Protocol address?
+a) InetAddress
+b) Address
+c) IP Address
+d) TCP Address
+View Answer
+
+Answer: a
+Explanation: InetAddress represents an Internet Protocol address. It provides static methods like getByAddress(), getByName() and other instance methods like getHostName(), getHostAddress(), getLocalHost().
+8. What does local IP address start with?
+a) 10.X.X.X
+b) 172.X.X.X
+c) 192.168.X.X
+d) 10.X.X.X, 172.X.X.X, or 192.168.X.X
+View Answer
+
+Answer: d
+Explanation: Local IP addresses look like 10.X.X.X, 172.X.X.X, or 192.168.X.X.
+9. What happens if IP Address of host cannot be determined?
+a) The system exit with no message
+b) UnknownHostException is thrown
+c) IOException is thrown
+d) Temporary IP Address is assigned
+View Answer
+
+Answer: b
+Explanation: UnknownHostException is thrown when IP Address of host cannot be determined. It is an extension of IOException.
+10. What is the java method for ping?
+a) hostReachable()
+b) ping()
+c) isReachable()
+d) portBusy()
+View Answer
+
+Answer: c
+
+1. How constructor can be used for a servlet?
+a) Initialization
+b) Constructor function
+c) Initialization and Constructor function
+d) Setup() method
+View Answer
+
+Answer: c
+Explanation: We cannot declare constructors for interface in Java. This means we cannot enforce this requirement to any class which implements Servlet interface.
+Also, Servlet requires ServletConfig object for initialization which is created by container.
+2. Can servlet class declare constructor with ServletConfig object as an argument?
+a) True
+b) False
+View Answer
+
+Answer: b
+Explanation: ServletConfig object is created after the constructor is called and before init() is called. So, servlet init parameters cannot be accessed in the constructor.
+3. What is the difference between servlets and applets?
+i. Servlets execute on Server; Applets execute on browser
+ii. Servlets have no GUI; Applet has GUI
+iii. Servlets creates static web pages; Applets creates dynamic web pages
+iv. Servlets can handle only a single request; Applet can handle multiple requests
+a) i, ii, iii are correct
+b) i, ii are correct
+c) i, iii are correct
+d) i, ii, iii, iv are correct
+View Answer
+
+Answer: b
+Explanation: Servlets execute on Server and doesn’t have GUI. Applets execute on browser and has GUI.
+Note: Join free Sanfoundry classes at Telegram or Youtube
+advertisement
+
+4. Which of the following code is used to get an attribute in a HTTP Session object in servlets?
+a) session.getAttribute(String name)
+b) session.alterAttribute(String name)
+c) session.updateAttribute(String name)
+d) session.setAttribute(String name)
+View Answer
+
+Answer: a
+Explanation: session has various methods for use.
+5. Which method is used to get three-letter abbreviation for locale’s country in servlets?
+a) Request.getISO3Country()
+b) Locale.getISO3Country()
+c) Response.getISO3Country()
+d) Local.retrieveISO3Country()
+View Answer
+
+Answer: a
+Explanation: Each country is usually denoted by a 3 digit code.ISO3 is the 3 digit country code.
+Take Java Programming Mock Tests - Chapterwise!
+Start the Test Now: Chapter 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+6. Which of the following code retrieves the body of the request as binary data?
+a) DataInputStream data = new InputStream()
+b) DataInputStream data = response.getInputStream()
+c) DataInputStream data = request.getInputStream()
+d) DataInputStream data = request.fetchInputStream()
+View Answer
+
+Answer: c
+Explanation: InputStream is an abstract class. getInputStream() retrieves the request in binary data.
+7. When destroy() method of a filter is called?
+a) The destroy() method is called only once at the end of the life cycle of a filter
+b) The destroy() method is called after the filter has executed doFilter method
+c) The destroy() method is called only once at the begining of the life cycle of a filter
+d) The destroyer() method is called after the filter has executed
+View Answer
+
+Answer: a
+Explanation: destroy() is an end of life cycle method so it is called at the end of life cycle.
+8. Which of the following is true about servlets?
+a) Servlets execute within the address space of web server
+b) Servlets are platform-independent because they are written in java
+c) Servlets can use the full functionality of the Java class libraries
+d) Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries
+View Answer
+
+Answer: d
+Explanation: Servlets execute within the address space of a web server. Since it is written in java it is platform independent. The full functionality is available through libraries.
+9. How is the dynamic interception of requests and responses to transform the information done?
+a) servlet container
+b) servlet config
+c) servlet context
+d) servlet filter
+View Answer
+
+Answer: d
+Explanation: Servlet has various components like container, config, context, filter. Servlet filter provides the dynamic interception of requests and responses to transform the information.
+10. Which are the session tracking techniques?
+i. URL rewriting
+ii. Using session object
+iii.Using response object
+iv. Using hidden fields
+v. Using cookies
+vi. Using servlet object
+a) i, ii, iii, vi
+b) i, ii, iv, v
+c) i, vi, iii, v
+d) i, ii, iii, v
+View Answer
+
+Answer: b
+
+1. Which of the following is used for session migration?
+a) Persisting the session in database
+b) URL rewriting
+c) Create new database connection
+d) Kill session from multiple sessions
+View Answer
+
+Answer: a
+Explanation: Session migration is done by persisting session in database. It can also be done by storing session in memory on multiple servers.
+2. Which of the below is not a session tracking method?
+a) URL rewriting
+b) History
+c) Cookies
+d) SSL sessions
+View Answer
+
+Answer: b
+Explanation: History is not a session tracking type. Cookies, URL rewriting, Hidden form fields and SSL sessions are session tracking methods.
+3. Which of the following is stored at client side?
+a) URL rewriting
+b) Hidden form fields
+c) SSL sessions
+d) Cookies
+View Answer
+
+Answer: d
+Explanation: Cookies are stored at client side. Hence, it is advantageous in some cases where clients disable cookies.
+Subscribe Now: Java Newsletter | Important Subjects Newsletters
+advertisement
+
+4. Which of the following leads to high network traffic?
+a) URL rewriting
+b) Hidden form fields
+c) SSL sessions
+d) Cookies
+View Answer
+
+Answer: a
+Explanation: WRL rewriting requires large data transfer to and from the server which leads to network traffic and access may be slow.
+5. Which of the following is not true about session?
+a) All users connect to the same session
+b) All users have same session variable
+c) Default timeout value for session variable is 20 minutes
+d) New session cannot be created for a new user
+View Answer
+
+Answer: c
+Explanation: Default timeout value for session variable is 20 minutes. This can be changed as per requirement.
+Get Free Certificate of Merit in Java Programming Now!
+6. SessionIDs are stored in cookies.
+a) True
+b) False
+View Answer
+
+Answer: a
+Explanation: SessionIDs are stored in cookies, URLs and hidden form fields.
+7. What is the maximum size of cookie?
+a) 4 KB
+b) 4 MB
+c) 4 bytes
+d) 40 KB
+View Answer
+
+Answer: a
+Explanation: The 4K is the maximum size for the entire cookie, including name, value, expiry date etc. To support most browsers, it is suggested to keep the name under 4000 bytes, and the overall cookie size under 4093 bytes.
+8. How can we invalidate a session?
+a) session.discontinue()
+b) session.invalidate()
+c) session.disconnect()
+d) session.falsify()
+View Answer
+
+Answer: b
+Explanation: We can invalidate session by calling session.invalidate() to destroy the session.
+9. Which method creates unique fields in the HTML which are not shown to the user?
+a) User authentication
+b) URL writing
+c) HTML Hidden field
+d) HTML invisible field
+View Answer
+
+Answer: c
+Explanation: HTML Hidden field is the simplest way to pass information but it is not secure and a session can be hacked easily.
+10. Which object is used by spring for authentication?
+a) ContextHolder
+b) SecurityHolder
+c) AnonymousHolder
+d) SecurityContextHolder
+View Answer
+
+Answer: d
+
+1. Which page directive should be used in JSP to generate a PDF page?
+a) contentType
+b) generatePdf
+c) typePDF
+d) contentPDF
+View Answer
+
+Answer: a
+Explanation: <%page contentType=”application/pdf”> tag is used in JSP to generate PDF.
+2. Which tag should be used to pass information from JSP to included JSP?
+a) Using <%jsp:page> tag
+b) Using <%jsp:param> tag
+c) Using <%jsp:import> tag
+d) Using <%jsp:useBean> tag
+View Answer
+
+Answer: a
+Explanation: <%jsp:param> tag is used to pass information from JSP to included JSP.
+3. Application is instance of which class?
+a) javax.servlet.Application
+b) javax.servlet.HttpContext
+c) javax.servlet.Context
+d) javax.servlet.ServletContext
+View Answer
+
+Answer: d
+Explanation: Application object is wrapper around the ServletContext object and it is an instance of a javax.servlet.ServletContext object.
+Note: Join free Sanfoundry classes at Telegram or Youtube
+advertisement
+
+4. _jspService() method of HttpJspPage class should not be overridden.
+a) True
+b) False
+View Answer
+
+Answer: a
+Explanation: _jspService() method is created by JSP container. Hence, it should not be overridden.
+5. Which option is true about session scope?
+a) Objects are accessible only from the page in which they are created
+b) Objects are accessible only from the pages which are in same session
+c) Objects are accessible only from the pages which are processing the same request
+d) Objects are accessible only from the pages which reside in same application
+View Answer
+
+Answer: b
+Explanation: Object data is available till session is alive.
+Take Java Programming Practice Tests - Chapterwise!
+Start the Test Now: Chapter 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+6. Default value of autoFlush attribute is?
+a) true
+b) false
+View Answer
+
+Answer: a
+Explanation: Default value “true” depicts automatic buffer flushing.
+7. Which one is the correct order of phases in JSP life cycle?
+a) Initialization, Cleanup, Compilation, Execution
+b) Initialization, Compilation, Cleanup, Execution
+c) Compilation, Initialization, Execution, Cleanup
+d) Cleanup, Compilation, Initialization, Execution
+View Answer
+
+Answer: c
+Explanation: The correct order is Compilation, Initialization, Execution, Cleanup.
+8. “request” is instance of which one of the following classes?
+a) Request
+b) HttpRequest
+c) HttpServletRequest
+d) ServletRequest
+View Answer
+
+Answer: c
+Explanation: request is object of HttpServletRequest.
+9. Which is not a directive?
+a) include
+b) page
+c) export
+d) useBean
+View Answer
+
+Answer: c
+Explanation: Export is not a directive.
+10. Which is mandatory in <jsp:useBean /> tag?
+a) id, class
+b) id, type
+c) type, property
+d) type,id
+View Answer
+
+Answer: a
+
+1. Which one of the following is correct for directive in JSP?
+a) <%@directive%>
+b) <%!directive%>
+c) <%directive%>
+d) <%=directive%>
+View Answer
+
+Answer: a
+Explanation: Directive is declared as <%@directive%>.
+2. Which of the following action variable is used to include a file in JSP?
+a) jsp:setProperty
+b) jsp:getProperty
+c) jsp:include
+d) jsp:plugin
+View Answer
+
+Answer: c
+Explanation: jsp:include action variable is used to include a file in JSP.
+3. Which attribute uniquely identification element?
+a) ID
+b) Class
+c) Name
+d) Scope
+View Answer
+
+Answer: a
+Explanation: ID attribute is used to uniquely identify action element.
+Subscribe Now: Java Newsletter | Important Subjects Newsletters
+advertisement
+
+4. “out” is implicit object of which class?
+a) javax.servlet.jsp.PrintWriter
+b) javax.servlet.jsp.SessionWriter
+c) javax.servlet.jsp.SessionPrinter
+d) javax.servlet.jsp.JspWriter
+View Answer
+
+Answer: d
+Explanation: JspWriter object is referenced by the implicit variable out which is initialized automatically using methods in the PageContext object.
+5. Which object stores references to the request and response objects?
+a) sessionContext
+b) pageContext
+c) HttpSession
+d) sessionAttribute
+View Answer
+
+Answer: b
+Explanation: pageContext object contains information about directives issued to JSP page.
+Participate in Java Programming Certification Contest of the Month Now!
+6. What temporarily redirects response to the browser?
+a) <jsp:forward>
+b) <%@directive%>
+c) response.sendRedirect(URL)
+d) response.setRedirect(URL)
+View Answer
+
+Answer: c
+Explanation: response.sendRedirect(URL) directs response to the browser and creates a new request.
+7. Which tag is used to set a value of a JavaBean?
+a) <c:set>
+b) <c:param>
+c) <c:choose>
+d) <c:forward>
+View Answer
+
+Answer: a
+Explanation: <c:set> is used to set a value of a java.util.Map object.
+8. Can <!–comment–> and <%–comment–%> be used alternatively in JSP?
+a) True
+b) False
+View Answer
+
+Answer: b
+Explanation: <!–comment–> is an HTML comment. <%–comment–%> is JSP comment.
+9. Java code is embedded under which tag in JSP?
+a) Declaration
+b) Scriptlet
+c) Expression
+d) Comment
+View Answer
+
+Answer: b
+Explanation: Scriptlet is used to embed java code in JSP.
+10. Which of the following is not a directive in JSP?
+a) page directive
+b) include directive
+c) taglib directive
+d) command directive
+View Answer
+
+Answer: d
+
+1. Which version of Java introduced annotation?
+a) Java 5
+b) Java 6
+c) Java 7
+d) Java 8
+View Answer
+
+Answer: a
+Explanation: Annotation were introduced with Java 5 version.
+2. Annotation type definition looks similar to which of the following?
+a) Method
+b) Class
+c) Interface
+d) Field
+View Answer
+
+Answer: c
+Explanation: Annotation type definition is similar to an interface definition in which the keyword interface is preceded by the sign @.
+3. Which of the following is not pre defined annotation in Java?
+a) @Deprecated
+b) @Overriden
+c) @SafeVarags
+d) @FunctionInterface
+View Answer
+
+Answer: b
+Explanation: @Overriden is not a pre defined annotation in Java. @Depricated, @Override, @SuppressWarnings, @SafeVarags and @FunctionInterface are the pre defined annotations.
+Subscribe Now: Java Newsletter | Important Subjects Newsletters
+advertisement
+
+4. Annotations which are applied to other annotations are called meta annotations.
+a) True
+b) False
+View Answer
+
+Answer: a
+Explanation: Annotations which are applied to other annotations are called meta annotations.
+5. Which one of the following annotations is not used in Hibernate?
+a) @Entity
+b) @Column
+c) @Basic
+d) @Query
+View Answer
+
+Answer: d
+Explanation: @Query is not an annotation used in Hibernate.
+Participate in Java Programming Certification Contest of the Month Now!
+6. Which one of the following is not ID generating strategy using @GeneratedValue annotation?
+a) Auto
+b) Manual
+c) Identity
+d) Sequence
+View Answer
+
+Answer: b
+Explanation: Auto, Table, Identity and Sequence are the ID generating strategies using @GeneratedValue annotation.
+7. Which one of the following is not an annotation used by Junit with Junit4?
+a) @Test
+b) @BeforeClass
+c) @AfterClass
+d) @Ignored
+View Answer
+
+Answer: d
+Explanation: @Test, @Before, @BeforeClass, @After, @AfterClass and @Ignores are the annotations used by Junit with Junit4.
+8. Using which annotation non visible or private method can be tested?
+a) @VisibleForTesting
+b) @NonVisibleForTesting
+c) @Visible
+d) @NonVisible
+View Answer
+
+Answer: a
+Explanation: Using @VisibleForTesting annotation private or non visible method can be tested.
+9. Which of the following annotation is used to avoid execution of Junits?
+a) @NoTest
+b) @explicit
+c) @avoid
+d) @ignore
+View Answer
+
+Answer: d
+Explanation: @ignore annotation is used to avoid execution of Junits.
+10. Which is the Parent class of annotation class?
+a) Class
+b) Object
+c) Main
+d) Super
+View Answer
+
+Answer: b

@@ -1,0 +1,36 @@
+Food Delivery App - Full stack app
+
+User sign up
+
+
+User sign in
+i/p - email , password
+resp - success - user details
+failed - auth failure SC 401.
+
+
+
+Assign address
+
+Admin - 
+ Add new restaurant
+ Add food item to the restaurant
+ Update restaurant details
+ Delete restaurant details
+ Delete specific food item from specific restaurant
+ 
+
+Customer 
+ - view single restaurant
+  - restaurant details (excluding its menu)
+ - view all restaurants
+  (excluding its menu)
+ - view selected restaurant n its menu
+
+Later 
+ Place Order
+ Cancel Order
+Display orders by specific order status (eg - DELIVERED)
+Update order status
+....
+ 

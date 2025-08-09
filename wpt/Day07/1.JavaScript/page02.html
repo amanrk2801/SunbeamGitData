@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data with CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="mb-3">
+                <label class="form-label" for="empid">EmpId</label>
+                <input class="form-control" type="number" id="empid" placeholder="enter empid">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" placeholder="enter name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="salary">Salary</label>
+                <input class="form-control" type="number" id="salary" placeholder="enter salary">
+            </div>
+            <div>
+                <button onclick="save()" class="btn btn-success">Save</button>
+            </div>
+        </div>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Empid</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td id="total">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        let totalSalary = 0
+
+        function save() {
+            const empid = document.getElementById("empid")
+            const name = document.getElementById("name")
+            const salary = document.getElementById("salary")
+            const tbody = document.getElementById("tbody")
+            const total = document.getElementById("total")
+
+            const row = `
+            <tr>
+                <td>${empid.value}</td>
+                <td>${name.value}</td>
+                <td>${salary.value}</td>
+            </tr>`
+
+            tbody.innerHTML += row
+            totalSalary += parseInt(salary.value)
+            total.innerText = totalSalary
+
+            // Clear input fields after saving
+            empid.value = ""
+            name.value = ""
+            salary.value = ""
+        }
+    </script>
+    </script>
+</body>
+
+</html>

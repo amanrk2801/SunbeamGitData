@@ -1,0 +1,326 @@
+package com.sunbeam;
+
+import java.time.LocalDate;
+import java.util.*;
+
+class Doctor {
+    private int id;
+    private String name;
+    private String specialization;
+
+    public Doctor(int id, String name, String specialization) {
+        this.id = id;
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getSpecialization() { return specialization; }
+
+    @Override
+    public String toString() {
+        return "Doctor [ID=" + id + ", Name=" + name + ", Specialization=" + specialization + "]";
+    }
+}
+
+
+class Patient {
+    private int id;
+    private String name;
+    private int age;
+
+    public Patient(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public int getAge() { return age; }
+
+    @Override
+    public String toString() {
+        return "Patient [ID=" + id + ", Name=" + name + ", Age=" + age + "]";
+    }
+}
+
+
+class Appointment {
+    private int id;
+    private Doctor doctor;
+    private Patient patient;
+    private LocalDate date;
+    private String status;
+
+    public Appointment(int id, Doctor doctor, Patient patient, LocalDate date, String status) {
+        this.id = id;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.date = date;
+        this.status = status;
+    }
+
+    public int getId() { return id; }
+    public Doctor getDoctor() { return doctor; }
+    public Patient getPatient() { return patient; }
+    public LocalDate getDate() { return date; }
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
+
+    @Override
+    public String toString() {
+        return "Appointment [ID=" + id + ", Doctor=" + doctor.getName() + ", Patient=" + patient.getName() +
+               ", Date=" + date + ", Status=" + status + "]";
+    }
+}
+
+
+class DoctorDAO {
+    private List<Doctor> doctors = new ArrayList<>();
+    private int idCounter = 1;
+
+    public void addDoctor(String name, String specialization) {
+        doctors.add(new Doctor(idCounter++, name, specialization));
+    }
+
+    public List<Doctor> getAllDoctors() {
+        return doctors;
+    }
+
+    public Doctor getDoctorById(int id) {
+        for (Doctor doctor : doctors) {
+            if (doctor.getId() == id) {
+                return doctor;
+            }
+        }
+        return null; // Not found
+    }
+}
+
+class PatientDAO {
+    private List<Patient> patients = new ArrayList<>();
+    private int idCounter = 1;
+
+    public void addPatient(String name, int age) {
+        patients.add(new Patient(idCounter++, name, age));
+    }
+
+    public List<Patient> getAllPatients() {
+        return patients;
+    }
+
+    public Patient getPatientById(int id) {
+        for (Patient patient : patients) {
+            if (patient.getId() == id) {
+                return patient;
+            }
+        }
+        return null; // Not found
+    }
+}
+
+
+
+
+class AppointmentDAO {
+    private List<Appointment> appointments = new ArrayList<>();
+    private int idCounter = 1;
+
+    public boolean bookAppointment(Doctor doctor, Patient patient, LocalDate date) {
+        for (Appointment a : appointments) {
+            if (a.getDoctor().getId() == doctor.getId() &&
+                a.getPatient().getId() == patient.getId() &&
+                a.getDate().equals(date) &&
+                !a.getStatus().equals("Cancelled")) {
+                return false; // Duplicate appointment found
+            }
+        }
+
+        appointments.add(new Appointment(idCounter++, doctor, patient, date, "Scheduled"));
+        return true;
+    }
+
+    public boolean cancelAppointment(int appointmentId) {
+        for (Appointment a : appointments) {
+            if (a.getId() == appointmentId && a.getStatus().equals("Scheduled")) {
+                a.setStatus("Cancelled");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Appointment> getAppointmentsByDoctor(int doctorId) {
+        List<Appointment> result = new ArrayList<>();
+        for (Appointment a : appointments) {
+            if (a.getDoctor().getId() == doctorId) {
+                result.add(a);
+            }
+        }
+
+        // Sort using anonymous Comparator
+        Collections.sort(result, new Comparator<Appointment>() {
+            @Override
+            public int compare(Appointment a1, Appointment a2) {
+                return a1.getDate().compareTo(a2.getDate());
+            }
+        });
+
+        return result;
+    }
+
+    public List<Appointment> getUpcomingAppointments() {
+        LocalDate today = LocalDate.now();
+        List<Appointment> result = new ArrayList<>();
+
+        for (Appointment a : appointments) {
+            if (a.getDate().isAfter(today) && a.getStatus().equals("Scheduled")) {
+                result.add(a);
+            }
+        }
+
+        // Sort appointments by date using manual comparator
+        Collections.sort(result, new Comparator<Appointment>() {
+            @Override
+            public int compare(Appointment a1, Appointment a2) {
+                return a1.getDate().compareTo(a2.getDate());
+            }
+        });
+
+        return result;
+    }
+
+    public Map<Doctor, Integer> getAppointmentCountPerDoctor() {
+        Map<Doctor, Integer> map = new HashMap<>();
+        for (Appointment a : appointments) {
+            if (a.getStatus().equals("Scheduled")) {
+                Doctor doc = a.getDoctor();
+                
+                if(!map.containsKey(doc))
+                {
+                	map.put(doc, 1);
+                }else {
+                	int count = map.get(doc);
+                	map.put(doc, count+1);
+                }
+            }
+        }
+        return map;
+    }
+
+
+
+    public void getAllAppointments() {
+    	 for (Appointment a : appointments) {
+    		 System.out.println(a);
+    	 }
+    }
+}
+
+
+public class Main {
+
+	public static void main(String[] args) {
+
+	        Scanner sc = new Scanner(System.in);
+	        DoctorDAO doctorDAO = new DoctorDAO();
+	        PatientDAO patientDAO = new PatientDAO();
+	        AppointmentDAO appointmentDAO = new AppointmentDAO();
+	        
+
+	        while (true) {
+	            System.out.println("\n--- Appointment Management System ---");
+	            System.out.println("1. Add a new doctor");
+	            System.out.println("2. Add a new patient");
+	            System.out.println("3. Book an appointment");
+	            System.out.println("4. Cancel an appointment");
+	            System.out.println("5. View all appointments for a doctor");
+	            System.out.println("6. View all upcoming appointments");
+	            System.out.println("7. View appointment count for each doctor");
+	            System.out.println("8. Exit");
+	            System.out.print("Choose an option: ");
+	            int choice = sc.nextInt();
+	            sc.nextLine();
+
+	            switch (choice) {
+	                case 1: 
+	                {
+	                    System.out.print("Enter doctor name: ");
+	                    String name = sc.nextLine();
+	                    System.out.print("Enter specialization: ");
+	                    String spec = sc.nextLine();
+	                    doctorDAO.addDoctor(name, spec);
+	                    System.out.println("Doctor added.");
+	                    break;
+	                }
+	                case 2: {
+	                    System.out.print("Enter patient name: ");
+	                    String name = sc.nextLine();
+	                    System.out.print("Enter age: ");
+	                    int age = sc.nextInt();
+	                    sc.nextLine();
+	                    patientDAO.addPatient(name, age);
+	                    System.out.println("Patient added.");
+	                    break;
+	                }
+	                case 3: {
+	                    System.out.print("Enter doctor ID: ");
+	                    int doctorId = sc.nextInt();
+	                    System.out.print("Enter patient ID: ");
+	                    int patientId = sc.nextInt();
+	                    System.out.print("Enter date (yyyy-mm-dd): ");
+	                    LocalDate date = LocalDate.parse(sc.next());
+
+	                    Doctor doctor = doctorDAO.getDoctorById(doctorId);
+	                    Patient patient = patientDAO.getPatientById(patientId);
+	                    if (doctor == null || patient == null) {
+	                        System.out.println("Invalid doctor or patient ID.");
+	                    } else {
+	                        boolean booked = appointmentDAO.bookAppointment(doctor, patient, date);
+	                        System.out.println(booked ? "Appointment booked." : "Duplicate appointment exists.");
+	                    }
+	                    
+	                    break;
+	                }
+	                case 4:{
+	                	appointmentDAO.getAllAppointments();
+	                    System.out.print("Enter appointment ID to cancel: ");
+	                    int id = sc.nextInt();
+	                    boolean canceled = appointmentDAO.cancelAppointment(id);
+	                    System.out.println(canceled ? "Appointment canceled." : "Invalid or already canceled.");
+	                    break;
+	                }
+	                case 5:{
+	                    System.out.print("Enter doctor ID: ");
+	                    int id = sc.nextInt();
+	                    List<Appointment> list = appointmentDAO.getAppointmentsByDoctor(id);
+	                    list.forEach(System.out::println);
+	                    break;
+	                }
+	                case 6:{
+	                    List<Appointment> list = appointmentDAO.getUpcomingAppointments();
+	                    list.forEach(System.out::println);
+	                    break;
+	                }
+	                case 7:{
+	                    Map<Doctor, Integer> map = appointmentDAO.getAppointmentCountPerDoctor();
+	                    for (Map.Entry<Doctor, Integer> entry : map.entrySet()) {
+	                        System.out.println(entry.getKey().getName() + ": " + entry.getValue() + " upcoming appointments");
+	                    }
+	                 break;   
+	                }
+	                case 8:{
+	                    System.out.println("Exiting...");
+	                    sc.close();
+	                    return;
+	                }
+	                default: System.out.println("Invalid choice.");
+	            }
+	        }
+	    }
+	}
+
+

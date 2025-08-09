@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+	<h1>Good Morning!</h1>
+	<hr/>
+	<div>
+		<a href="first">GET Request - FirstServlet</a>
+	</div>
+	<br/>
+	<div>
+		<form method="post" action="first">
+			<input type="submit" value="POST Request - FirstServlet"/>
+		</form>
+	</div>
+	<hr/>
+	<div>
+		<a href="second">GET Request - SecondServlet</a>
+	</div>
+	<br/>
+	<div>
+		<form method="post" action="second">
+			<input type="submit" value="POST Request - SecondServlet"/>
+		</form>
+	</div>
+	<hr/>
+	<div>
+		<form method="get" action="third">
+			Fruit: <input type="text" name="fruit"/> <br/><br/>
+			<input type="submit" value="GET Request - ThirdServlet"/>
+		</form>
+	</div>
+	<br/>
+	<div>
+		<form method="post" action="third">
+			Fruit: <input type="text" name="fruit"/> <br/><br/>
+			<input type="submit" value="POST Request - ThirdServlet"/>
+		</form>
+	</div>
+	<hr/>
+	<div>
+		<form method="post" action="fruitdb">
+			Fruit: <input type="text" name="fruit"/> <br/><br/>
+			<input type="submit" value="Submit to FruitDbServlet"/>
+		</form>
+	</div>
+	<hr/>
+	<div>
+		<form method="post" action="fruitdbxml">
+			Fruit: <input type="text" name="fruit"/> <br/><br/>
+			<input type="submit" value="Submit to FruitDbXmlServlet"/>
+		</form>
+	</div>
+	<hr/>
+	<a href="goodbye">Sign Out</a>
+</body>
+</html>
+

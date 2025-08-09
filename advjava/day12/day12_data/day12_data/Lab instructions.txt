@@ -1,0 +1,299 @@
+Day 7
+
+Please follow these steps 
+(First 4 steps are already done in the morning)
+
+1. Copy hibernate_template_project under your workspace folder.
+
+2. From IDE
+Click on File --> import --> Maven --> Existing Maven Project --> Browse n select hibernate_template_project  --> Finish.
+
+3. Update the project .
+R click on the project --> Maven --> Update Project -->select Force update checkbox -->Finish
+
+4. Edit DB password from hibernate.cfg.xml , as per your DB settings.
+
+Start from here.
+Refer to your notes OR 
+"day7_data\day7_help\day7-sequence.rtf"
+
+
+5. Revise in top down manner , from 
+Tester -DAO- Entity layer - DB
+
+6. Create Entity , DAO n test it with Tester.
+
+
+Day 8
+ 
+Testers to be revised -
+You have to trace it from Tester -> DAO n Entities.
+UserRegistration.java
+GetUserDetailsById.java
+DisplayAllUserDetails.java
+DisplayUsersByRoleAndDate.java
+DisplayLastNamesByRole.java
+DisplayNameAndDobByRole.java
+ChangePassword.java
+ApplyDiscount.java
+DeleteUserDetailsById.java
+
+
+6. Mandatory assignment
+
+CRUD operations on Product (can be used later in eCommerce project)
+
+Typical product details -
+product id : Long (auto increment)
+name : string (unique) : varchar(20)
+product description : string : varchar(300)
+manufacture date : LocalDate
+price : double
+available quantity : int
+category : enum (STATIONARY,SHOES,GRAINS,OIL...)
+
+Dev steps 
+
+6.1 Continue with hibernate_template_project.
+6.2 Edit DB settings
+6.3 Create HibernateUtils class
+6.4 Create Product Entity from above description
+1.3 Create Product DAO , implementation class  n testers for the following
+(After writing DAO method at least once on your own , please copy the boilerplate code)
+You can copy the testers from day8.1 n make necessary changes.
+
+Solve as many as possible ( No Pressure !!!)
+ 1. Add a new product
+i/p - product details (except id)
+o/p - message (success or failure)
+
+ 2. Display product details 
+     i/p - product id 
+o/p - product details OR error message
+
+ 3. Display   id , name , price  of all the products manufactured before specified date and from specific category
+i/p - date , category(enum)
+o/p - List of selected products details
+
+ 4. Change Product price
+   i/p - product name
+   o/p - message
+
+OPTIONAL
+
+ 5. Apply discount to all products , whose available quantity > specified quantity
+i/p - quantity n discount in %
+o/p - message
+
+
+Day 9 
+1. Copy n import day9.2 in your workspace
+ - Force update project
+ - If required , run Maven goals 
+  - clean compile
+
+2. Revise one---many , bi directional association between Restaurant n FoodItem
+
+
+3. Mandatory Assignment (for complete confidence !)
+ - Try n solve as many objectives as possible .
+
+3.1 Configure 
+Category 1<----->* Product
+
+Category details 
+ - id : Long - PK
+ - creation date
+ - updation time stamp
+ - name (unique) - varchar(50)
+ - description - varchar(255)
+
+Product details 
+ - product id : Long (auto increment) - PK
+ - creation date
+ - updation time stamp
+name : string (unique) : varchar(20)
+product description : string : varchar(300)
+manufacture date : LocalDate
+price : double
+available quantity : int
+category_id - FK
+
+3.2 Continue with your earlier Product entity.
+ - Make suitable changes.
+ - add required annotations
+ - add <mapping> entries.
+
+4. Solve 
+4.1  Add new Category
+ i/p - category details
+ o/p - a message
+
+4.2  Add multiple products to the existing category
+ i/p - category id , list of products
+ o/p - a message
+
+
+4.3 Delete category details (hard delete)
+i/p - category id
+o/p - a message
+
+5. Later -
+  Copy n import day9.1 in your workspace
+ - Force update project
+ - If required , run Maven goals 
+  - clean compile
+ - Revise image (blob) handling
+
+
+Day 10
+1. copy n import day10.1 
+ - as existing Maven project
+ - edit DB password
+ - force update maven project
+ - If required 
+  Maven build - clean compile
+
+  - Revise
+  lazy init exception n solutions
+  one -one uni dir association , between User n Address
+
+2. Mandatory assignment
+ copy n import "web_mvc_hibernate_template"
+It is a dynamic web project with Maven
+ - as existing Maven project
+ - edit DB password
+ - force update maven project
+ - If required 
+  Maven build - clean compile
+
+Understand code  with flow diagram
+"day10_data\day10_help\diagrams\custom implementation of MVC n Front Controller.png"
+
+Complete Hibernate based DAO layer
+- Test User's CRUD
+
+Day 11
+
+1. copy n import "day11.1" , in your workspace
+ - as existing Maven project
+ - force update maven project
+ - If required 
+   Maven build - clean compile
+ - It should download spring dependencies.
+
+1.1 Open
+1. tester.TestSpringContainer
+2. bean-config.xml
+ - bean tags attributes
+ - constructor based D.I
+ - setter based D.I
+3. dependency beans (teachers)
+4. dependent bean (Public school)
+5. Revise bean life cycle n D.I
+
+2. copy n import "day11.2" , in your workspace
+ - as existing Maven project
+ - force update maven project
+ - If required 
+   Maven build - clean compile
+ - Revise factory method based D.I
+
+3. Optional work - 
+Revise many-many association , with new assignment
+1. Create new tag
+i/p - tag name
+o/p - a message
+
+2. Add specified  restaurant under specified tag
+i/p - restaurant id , tag id
+o/p - DB action - rec should be added in the join table
+
+4. Optional work 
+
+Create the entities for E-R (Refer - "day9_data/day9_help\diagrams\fooddelivery-ER diagram.png")
+
+
+Can customer add multiple food items to any order ? Yes !
+Can a food item exist in multiple orders ? Yes !
+
+Then what is the association between Order n FoodItem ?
+many-many right ?
+
+So can we use @ManyToMany annotation here ? NO 
+Why ??????????
+
+Suggestion
+Order 1<---->* OrderLine
+User (Customer) 1 <-----* Order
+Restaurant 1<----* Order
+FoodItem 1 <----* OrderLine
+
+
+
+Order details 
+ - id , creation date , last updated date time
+ - delivery charges
+ - order amount , order status ,
+ - order delivery time (promised) eg - In 30 minutes , after placing the order.
+ FKs - customer_id
+      - restaurant_id
+
+
+OrderLine details 
+ - id , creation date , last updated
+ - quantity
+ - sub total
+ - FKs
+  - food_item_id
+  - restrurant_id (optional BUT recommended)
+
+ 
+
+Day 12
+
+First we will complete Spring MVC flow n then you can continue to revision of autowiring n annotationations.
+
+1. Copy n import "day12_data\code\spring_mvc_hibernate"
+ - Maven Force Update
+ - Run - Maven Build - clean compile
+It should download spring web MVC deoendencies.
+
+1.1 Test Spring MVC Flow.
+1.2 Test ModelAndView -to share model attrbutes (results) 
+1.3 Test Model( Map)  -to share model attrbutes (results) 
+
+2. In the individual labs
+ 2.1 Copy n import "day12.1 , to revise
+   autowire=byName
+   Refer - xml file n PublicSchool.java n TestSpringContainer.java
+
+2.2 Copy n import "day12.2 , to revise
+   autowire=byType
+   Refer - xml file n PublicSchool.java n TestSpringContainer.java
+
+2.3 Copy n import "day12.3 , to revise
+   autowire=constructor (with single teacher n single coach)
+   Refer - xml file n PublicSchool.java n TestSpringContainer.java
+
+2.4 Copy n import "day12.4 , to revise
+   autowire=constructor (with multiple teachers n multiple coaches)
+   Refer - xml file n PublicSchool.java n TestSpringContainer.java
+
+
+2.5 Copy n import "day12.5 , to revise
+   Hybrid approach , with lesser xml n majority annotations
+   Refer - xml file n PublicSchool.java n TestSpringContainer.java
+    Also look at dependency beans (Teachers n Sport Coaches)
+   
+
+
+
+
+
+
+
+
+
+ 
+

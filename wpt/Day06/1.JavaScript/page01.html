@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        let obj = new Object()
+        console.log(obj)
+
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        function displayPerson() {
+            console.log("Name - " + this.name)
+            console.log("Age - " + this.age)
+        }
+
+        Person.prototype.display = displayPerson
+        let p1 = new Person("Anil", 30)
+        console.log(p1)
+
+        function Employee(id, name, age, salary) {
+            Person.call(this, name, age)
+            this.id = id
+            this.salary = salary
+        }
+
+        //way-1
+        // Employee.prototype = Object.create(Person.prototype)
+        // // Add the employee constructor address
+        // Employee.prototype.constructor = Employee
+
+        // way-2
+        // use of __proto__ is not recommended
+        // It is non standard way of prototype inheritance
+        // instead use the Object.setPrototypeOf()
+        //Employee.prototype.__proto__ = Person.prototype
+
+
+        //way-3
+        Object.setPrototypeOf(Employee.prototype, Person.prototype)
+        Employee.prototype.toString = function () {
+            return this.id + "," + this.name + "," + this.age + "," + this.salary
+        }
+
+        let e1 = new Employee(1, "Mukesh", 32, 20000)
+        console.log(e1)
+        console.log(e1.toString())
+
+    </script>
+</body>
+
+</html>

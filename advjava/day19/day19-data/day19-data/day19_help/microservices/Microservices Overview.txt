@@ -1,0 +1,171 @@
+Microservices Overview
+
+Microservices is an architectural approach to 
+ - Build software applications that helps both developers and businesses 
+ - Achieve faster delivery cycles
+ - Improve scalability
+ - Help teams to work independently. 
+
+In this approach, the entire application is broken into a smaller independent service. 
+
+Each  service is 
+ - self-contained 
+ - performs a dedicated function
+ - links with other services through APIs and protocols. 
+
+Different programming languages, frameworks, and technologies can be  used to develop these services.
+
+Spring Boot Revision
+ - A popular open-source framework 
+ - To build an independent application or any microservice easily in a short time
+ - Provides a set of tools, conventions, and a wide range of pre-built components
+  - Embedded servers, DBCP , MVC components 
+ - easy to configure 
+ - Integrates well with other Spring frameworks, like Spring Cloud to provide additional    functionality for building distributed systems. 
+
+ This enables developers to focus on building business logic rather than spending efforts on infrastructure and configuration.
+
+One of the important aspects of Spring Boot is that it provides opinionated or sensible defaults for configuration. So, getting started with Spring Boot is much simpler for developers and it reduces the number of boilerplate codes in the application.
+
+Why Spring Boot for Microservices
+
+1. Rapid development: By offering pre-build components Spring Boot simplifies the process of building and developing the Microservices an easy task.
+
+2. Modular and lightweight: Spring Boot is a modular framework, and this helps in scaling up or down in Microservices easily based on the functionality changes. So, this is a lightweight and excellent choice for building Microservices quickly and efficiently.
+
+3. Integration with other spring frameworks helps in a building distributed system.
+
+4. Cloud-ready: Spring Boot works seamlessly with all cloud platforms, thus helping Microservices to deploy and manage easily.
+
+5. Wide and active community of developers helps in supporting necessary resources in case of problems.
+
+Architecture
+Microservices use common architectural patterns
+ - to promote modularity, scalability, and loose coupling between services. 
+
+Important architectural patterns are:
+
+1. Each Microservice has its own database.
+
+2. Client API interacts only through the API gateway, and they do not have direct access to the services.
+
+3. Each service will be registered to the discovery server. The discovery server has information on all the Microservices available in the system.
+
+4. Configuration server contains all the configurations for the Microservices.
+
+5. Each Microservice is built as a separate Spring Boot application, which can be developed, deployed, and scaled independently.
+
+
+Identity providers
+An Identity Provider is a component or service that takes care of authentication and authorization for the Microservices. It centralizes the user authentication process and provides secure access tokens or session identifiers to the clients. Commonly used Identity Providers are Key cloak, Okta, Auth0, or custom implementations using Spring Security.
+
+API Gateway
+An API gateway is the entry point for clients and provides a unified interface to access multiple Microservices. The API Gateway handles requests and performs routing, load balancing, authentication, and other cross-cutting concerns. A few examples of API gateway solutions are Spring Cloud Gateway and Netflix Zuul(older implementation)
+
+Service Discovery
+-  Mechanism by which Microservices dynamically locate and communicate with each other without relying on hard-coded service endpoints. 
+- Enables services to be resilient(fault tolerant) and flexible as they can discover and interact with other services regardless of their location or IP addresses.
+ -  Service discovery allows for dynamic scaling, load balancing, and failover of services in a distributed environment. 
+
+- Clients or consumer Microservices can retrieve the network locations (endpoints) of available service instances and make requests to them. 
+
+Service Registration
+
+- A centralized component that keeps track of registered Microservices and their network locations (endpoints). 
+- It is a directory where Microservices can register themselves, typically when they start up, providing information such as their hostname, IP address, and available endpoints.
+-  The service registry provides a centralized view of all registered services, enabling other services to query and discover available service instances.
+-  It helps in managing service metadata, health checks, and monitoring of registered services. 
+- Common service registry implementations include Netflix Eureka , Spring Cloud Consul or ZooKeeper.
+
+Circuit Breaker Pattern
+ - This  pattern introduces a layer of protection between services, like an electrical circuit breaker.
+-  With the help of the Circuit Breaker pattern, Microservices can gracefully handle failures and prevent cascading effects. 
+- It monitors the calls made to a particular service and automatically trips or opens the circuit when a predefined threshold of failures is reached.
+- Spring Cloud Circuit Breaker (Resilience4j) , is a popular choice for implementing Circuit Breakers in Spring Boot
+ - Offers features like thread isolation, timeouts, bulkheads,fallback methods,Retry.
+
+Additional Patterns include 
+- Event-Driven Architecture
+-  Distributed Tracing
+-  Centralized Configuration,
+-  Containerization and Orchestration, 
+- Saga 
+etc.
+
+Building Microservices with Spring Boot -
+
+Dev steps
+
+1. Set up your development environment.
+
+2. Create a new Spring Boot project.
+
+3. Define your microservice.
+
+4. Implement business logic.
+
+5. Implement data persistence.
+
+6. Implement communication between Microservices.
+
+7. Testing.
+
+8. Containerize and Deployment.
+
+9. Monitor, Log and maintain.
+
+Best Practices 
+
+1. Organize and design services based on well-defined business capabilities.
+2. Prefer asynchronous communication patterns like Apache Kafka, RabbitMQ or event-driven architectures.
+3. Use API Gateways such as Spring Cloud Gateway.
+4.  Implement service discovery like Netflix Eureka 
+5. Apply fault tolerance patterns  Resilience4j.
+6. Ensure data consistency using distributed transactions
+7. Implement proper monitoring and logging using tools like Spring Boot Actuator, or Grafana
+8. Use DevOps practices and automate deployment processes using tools like Docker, Kubernetes, Jenkins
+9. 
+Implement proper authentication and authorization mechanisms using Spring Security or external identity providers (OAuth, OpenID Connect).
+10. 
+Consider using testing tools like Spring Boot Test, Mockito, and WireMock for effective end-to-end testing.
+
+Use case 
+A most common use case for Microservices with Spring Boot architecture is in the development of an E-commerce platform.
+
+The E-commerce platform handles various categories of workflow such as product catalog, inventory management, order processing, payment processing, and customer management. 
+
+Microservices with Spring Boot architecture will provide a suitable approach to address such complex applications.
+
+1. Product catalog Service: This microservice manages product information, including details, pricing, and availability. It provides APIs for listing products, retrieving product details, and updating inventory.
+
+2. Inventory Service: A microservice to handle inventory management, tracking the availability of products. It exposes APIs to reserve or release inventory and syncs inventory data with other services.
+
+3. Order Service: Helps in order placement, processing, and fulfillment. It communicates with the product catalog and inventory services to validate orders and update the status. Additionally, it integrates with payment gateway services for transaction processing.
+
+4. Customer Service: Manages customer information, including profiles, addresses, and order history. It provides APIs for user registration, authentication, and retrieving customer details.
+
+Each of these services can be developed as separate Spring Boot applications, allowing for independent deployment, scaling, and maintenance. 
+
+FAQs
+Q1. What is the key difference between Monolithic Vs Microservices?
+In monolithic applications , all services are tightly coupled , making development , testing , deployment n scaling difficult.
+
+In microservices based architecture , each functionality is developed , tested , deployed n scaled independently , leading to loose coupling. 
+
+
+
+Q2. What are the challenges to adopting Microservices with Spring Boot architecture?
+
+The complexity of distributed systems, service communication and coordination, data management, deployment complexity, testing and debugging, and organizational and cultural shift are a few of the challenges business face while adopting Microservices architecture.
+
+Q3. How do Microservices communicate with each other in Spring Boot?
+
+Microservices can communicate with each other through various mechanisms like RESTful APIs, messaging systems (e.g., Apache Kafka, RabbitMQ), or synchronous RPC frameworks like gRPC.
+
+Q4. Will Spring Boot integrate with other technologies or frameworks in the Microservices architecture?
+
+Yes, Spring Boot is designed to be flexible and can be easily integrated with other technologies or frameworks. It provides seamless integration with Spring Cloud, Netflix OSS, and other popular frameworks for building robust Microservices architectures.
+
+Q5. Is it possible to deploy Microservices built with Spring Boot on cloud platforms?
+
+Microservices built with Spring Boot can be deployed on various cloud platforms, including AWS, Azure, Google Cloud Platform, and others. Spring Boot provides excellent support for cloud-native development and deployment.

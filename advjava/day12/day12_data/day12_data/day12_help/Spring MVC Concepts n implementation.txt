@@ -1,0 +1,54 @@
+Spring MVC Concepts n implementation steps
+1. Copy n import 
+ - "template projects\spring_mvc_hibernate"
+ - confirm dependencies .
+
+2. To ensure , any request from any client is intercepted by 
+ - global interceptor
+Configure it
+Configure Spring supplied - FronController
+ class - o.s.web.servlet.DispatcherServlet
+ - web.xml 
+ - servlet-name - abc (spring)
+ class
+load-on-startup - 1
+url-pattern - /
+
+3. At the application start up -
+ WC - starts life cycle of D.S (DispatcherServlet)
+  - load , singleton instace , ServletConfig
+  - init 
+  D.S starts the SC
+  - using xml config file
+
+Defaults of xml config file
+location - WEB-INF (private content folder)
+name - servletName-servlet.xml
+  (abc-servlet.xml)
+ contents - instructions for starting SC
+
+4. Copy from 
+"day11-data\day11_help\spring-hibernate-templates\spring-servlet.xml"
+- under <WEB-INF>
+
+5. Create Request Handling Controller
+ - to render "index page"
+5.1 Add class level annotation
+ @Controller => request handling 
+  Presentation Logic  (P.L)
+
+5.2 Add Method level annotation  (for req handling methods)
+@RequestMapping -- service of Servlet
+@GetMapping - doGet
+@PostMapping - doPost
+
+
+
+
+ 
+
+
+
+
+
+

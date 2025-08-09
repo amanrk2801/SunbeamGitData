@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            console.log("Inside f1()")
+            // hidden parameter
+            // console.log(arguments)
+            for (let p of arguments)
+                console.log(p)
+        }
+        //f1()
+        //f1(10)
+        //f1(10, 20)
+        //f1(10, 20, 30)
+        //f1(10, 20, 30, 40)
+
+        // varaible arity/argument method from java
+        function f2(...arr) // Rest Operator
+        {
+            console.log("Inside f2()")
+            for (let element of arr)
+                console.log(element)
+
+        }
+        f2()
+        f2(10)
+        f2(10, 20)
+        f2(10, 20, 30)
+        f2(10, 20, 30, 40)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            let n1 = 10 // Local scope
+            console.log("n1 in f1 = " + n1)
+        }
+        f1()
+
+        function f2() {
+            console.log("n1 in f2 = " + n1) // error
+        }
+        f2() 
+    </script>
+</body>
+
+</html>

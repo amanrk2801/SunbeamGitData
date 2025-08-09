@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .country {
+        color: black;
+        background-color: beige;
+        padding: 10px;
+        border: 1px black solid;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 5px 5px 5px 5px gray;
+      }
+    </style>
+  </head>
+  <body onload="onPageLoad()">
+    <h2>Rendering an array of scalar values</h2>
+    <div id="root"></div>
+    <script type="text/babel">
+      function onPageLoad() {
+        // array of strings
+        const countries = ['india', 'usa', 'uk', 'japan', 'bhutan', 'nepal']
+
+        const div = (
+          <div>
+            <h3>rendering values using index positions</h3>
+            <div>{countries[0]}</div>
+            <div>{countries[1]}</div>
+            <div>{countries[2]}</div>
+            <div>{countries[3]}</div>
+
+            <hr />
+
+            <h3>rendering all values using map</h3>
+            {countries.map((country) => {
+              return <div className='country'>{country}</div>
+            })}
+          </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('root')).render(div)
+      }
+    </script>
+  </body>
+</html>

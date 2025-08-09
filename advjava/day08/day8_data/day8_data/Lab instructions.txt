@@ -1,0 +1,82 @@
+Day 7
+
+Please follow these steps 
+(First 4 steps are already done in the morning)
+
+1. Copy hibernate_template_project under your workspace folder.
+
+2. From IDE
+Click on File --> import --> Maven --> Existing Maven Project --> Browse n select hibernate_template_project  --> Finish.
+
+3. Update the project .
+R click on the project --> Maven --> Update Project -->select Force update checkbox -->Finish
+
+4. Edit DB password from hibernate.cfg.xml , as per your DB settings.
+
+Start from here.
+Refer to your notes OR 
+"day8_data\day8_help\day8-sequence.rtf"
+
+
+5. Revise in top down manner , from 
+Tester -DAO- Entity layer - DB
+ 
+Testers to be revised -
+You have to trace it from Tester -> DAO n Entities.
+UserRegistration.java
+GetUserDetailsById.java
+DisplayAllUserDetails.java
+DisplayUsersByRoleAndDate.java
+DisplayLastNamesByRole.java
+DisplayNameAndDobByRole.java
+ChangePassword.java
+ApplyDiscount.java
+DeleteUserDetailsById.java
+
+
+6. Mandatory assignment
+
+CRUD operations on Product (can be used later in eCommerce project)
+
+Typical product details -
+product id : Long (auto increment)
+name : string (unique) : varchar(20)
+product description : string : varchar(300)
+manufacture date : LocalDate
+price : double
+available quantity : int
+category : enum (STATIONARY,SHOES,GRAINS,OIL...)
+
+Dev steps 
+
+6.1 Continue with hibernate_template_project.
+6.2 Edit DB settings
+6.3 Create HibernateUtils class
+6.4 Create Product Entity from above description
+1.3 Create Product DAO , implementation class  n testers for the following
+(After writing DAO method at least once on your own , please copy the boilerplate code)
+You can copy the testers from day8.1 n make necessary changes.
+
+Solve as many as possible ( No Pressure !!!)
+ 1. Add a new product
+i/p - product details (except id)
+o/p - message (success or failure)
+
+ 2. Display product details 
+     i/p - product id 
+o/p - product details OR error message
+
+ 3. Display   id , name , price  of all the products manufactured before specified date and from specific category
+i/p - date , category(enum)
+o/p - List of selected products details
+
+ 4. Change Product price
+   i/p - product name
+   o/p - message
+
+OPTIONAL
+
+ 5. Apply discount to all products , whose available quantity > specified quantity
+i/p - quantity n discount in %
+o/p - message
+

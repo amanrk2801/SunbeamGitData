@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        thead {
+            background-color: aquamarine;
+        }
+
+        tfoot {
+            background-color: yellow;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: beige;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>pid</th>
+                <th>name</th>
+                <th>price</th>
+                <th>qty</th>
+                <th>amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Pen</td>
+                <td>10</td>
+                <td>5</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pencil</td>
+                <td>5</td>
+                <td>10</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Book</td>
+                <td>50</td>
+                <td>10</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Eraser</td>
+                <td>5</td>
+                <td>20</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sharpner</td>
+                <td>10</td>
+                <td>10</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Bill</td>
+                <td>800</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

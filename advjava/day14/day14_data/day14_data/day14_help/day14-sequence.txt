@@ -1,0 +1,30 @@
+1.	Spring Boot in more details
+2.	Revise Spring Boot MVC code walk through
+3.	Spring Data JPA 
+4.	Transaction management internals
+5.	Continue to more objectives  
+
+Core Java Refresher -
+
+java.util.Optional<T>
+
+It is a generic class that represents a holder which may or may not hold a value of type T.
+
+Methods -
+public T orElseThrow()
+Returns a value if present , otherwise throws the exception - NoSuchElementException
+
+OR
+
+public  T orElseThrow(Supplier<? extends X> exceptionSupplier) throws X extends Throwable
+If a value is present, returns the value, otherwise throws an exception produced by the exception supplying function.
+
+eg - In RestaurantService Layer
+   Restaurant restaurant=restaurantDao.findById(restaurantId)
+    . orElseThrow(() -> new MyCustomException("Restaurant not found !!!!!"));
+
+Supplier – functional i/f
+SAM – public T get()
+Eg – How will you throw a custom exception – ResourceNotFoundException , with the mesg – “Invalid User Id”
+Code in the service layer – 
+User user=userDao.findById(userId).orElseThrow(() -> new ResourceNotFoundException(“Invalid User Id”)));

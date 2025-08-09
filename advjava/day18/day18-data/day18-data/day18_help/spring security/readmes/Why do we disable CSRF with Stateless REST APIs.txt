@@ -1,0 +1,39 @@
+Why do we disable CSRF (Cross Site Request Forgery) in Spring Security  when working with stateless REST APIs ?
+
+
+CSRF is a security  attack where a malicious website causes a user's browser to make unintended requests to a different site where the user is authenticated (e.g. hacker's site making a call to your banking site).
+
+Why CSRF Protection Is Important for Web Apps ?
+
+In traditional stateful web applications ( JSP + Spring MVC), the browser automatically sends cookies (JSESSIONID), so attackers can trick users into making unintended requests. 
+So CSRF protection is important there.
+
+When building REST APIs, you typically:
+
+ - Use stateless authentication, like JWT tokens n not cookies.
+
+ - Do not rely on sessions stored on the server.
+    (No HttpSession is used to store any spring security information)
+
+ - Expect clients (like mobile apps, SPAs) to explicitly send credentials with each request (via Authorization headers).
+
+Since:
+
+Cookies aren’t automatically sent, and
+
+Browsers aren't used directly by REST clients,
+ - CSRF protection becomes unnecessary.
+
+
+If you're building a session-based web app with forms and cookies, you should keep CSRF enabled.
+
+In case of conventional stateful web app - 
+ 1. Spring Security  generates the unique CSRF token , for the user's session.
+ 2. This token is stored on the server side (usually in the user's session).
+ 3. The token is then ,sent to the client (usually embedded in an HTML hiddent form field or as a meta tag).
+4. Browser DOES NOT store this csrf token in cookies .
+5. The browser includes the token in the request (in the body or as a header).
+6. Spring Security compares the submitted token with the one stored in the session.
+7. If the tokens match → Request is accepted.
+    If they don't → Request is rejected (likely CSRF attack).
+

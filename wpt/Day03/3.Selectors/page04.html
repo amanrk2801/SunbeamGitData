@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descendent selector</title>
+    <style>
+        /* child selector */
+        div>p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>This is a para 1</p>
+        <p>This is a para 2</p>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                <p>This is para 3</p>
+            </li>
+            <li>
+                <p>This is para 4</p>
+            </li>
+        </ul>
+    </div>
+
+    <p>This is para 5</p>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            const result = n1 + n2
+            console.log("Addition - " + result)
+        }
+
+        console.log("add - " + add)
+        console.log("typeof(add) - " + typeof (add))
+
+        add(10, 20)
+
+        let myadd = add // Function Alias
+
+        console.log("myadd - " + myadd)
+        console.log("typeof(myadd) - " + typeof (myadd))
+        myadd(30, 40)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+D:\KaradDotNetDemos\Demo\15DemoReflection\bin\Debug\net8.0\15DemoReflection.exe
+D:\KaradDotNetDemos\Demo\15DemoReflection\bin\Debug\net8.0\15DemoReflection.deps.json
+D:\KaradDotNetDemos\Demo\15DemoReflection\bin\Debug\net8.0\15DemoReflection.runtimeconfig.json
+D:\KaradDotNetDemos\Demo\15DemoReflection\bin\Debug\net8.0\15DemoReflection.dll
+D:\KaradDotNetDemos\Demo\15DemoReflection\bin\Debug\net8.0\15DemoReflection.pdb
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.GeneratedMSBuildEditorConfig.editorconfig
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.AssemblyInfoInputs.cache
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.AssemblyInfo.cs
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.csproj.CoreCompileInputs.cache
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.dll
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\refint\15DemoReflection.dll
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.pdb
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\15DemoReflection.genruntimeconfig.cache
+D:\KaradDotNetDemos\Demo\15DemoReflection\obj\Debug\net8.0\ref\15DemoReflection.dll

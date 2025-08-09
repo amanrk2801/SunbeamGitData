@@ -1,0 +1,85 @@
+date
+cal
+cal -y
+cal -y 2020
+man cal
+pwd
+ls
+mkdir dir
+ls
+mkdir dir1 dir2 dir3
+ls
+mkdir -p d1/d2/d3
+ls
+rmdir dir
+ls
+ls d1
+ls d1/d2
+ls d1/d2/d3
+ls -R d1
+pwd
+ls
+cd dir1
+pwd
+cd /home/sunbeam
+pwd
+cd -
+pwd
+cd ..
+pwd
+cd ~
+cd -
+cd .
+touch file.txt
+ls
+touch file1.txt file2.txt file3.txt
+ls
+cat > kdac.txt
+ls
+cat kdac.txt 
+cat > kdac.txt
+cat kdac.txt 
+cat >> kdac.txt
+cat kdac.txt 
+ls
+rm file.txt 
+ls
+cp kdac.txt karad.txt
+ls
+cat kdac.txt 
+cat karad.txt 
+cp kdac.txt dir1
+ls
+ls dir1
+cp kdac.txt dir1/new.txt
+ls dir1
+ls 
+cp dir1 copy
+cp -r dir1 copy
+ls
+ls copy
+ls dir1
+rmdir copy
+rm -r copy
+ls
+mv kdac.txt dac.txt
+ls
+mv file1.txt dir1
+ls
+ls dir1
+mv dir1 move
+ls
+cat > numbers.txt
+cat numbers.txt 
+cat -n numbers.txt 
+head numbers.txt 
+tail numbers.txt 
+head -6 numbers.txt 
+tail -7 numbers.txt 
+cat numbers.txt 
+cat dac.txt 
+rev dac.txt 
+tac dac.txt 
+cat numbers.txt 
+uniq numbers.txt 
+history

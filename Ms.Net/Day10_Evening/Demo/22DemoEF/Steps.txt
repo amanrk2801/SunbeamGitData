@@ -1,0 +1,23 @@
+﻿1. Add Package: Microsoft.EntityFrameworkCore 8.0.0
+
+2. Add Package: Microsoft.EntityFrameworkCore.Design 8.0.0
+
+3. Add Package: Microsoft.EntityFrameworkCore.SqlServer 8.0.0
+
+4. Add Package: Microsoft.EntityFrameworkCore.Tools 8.0.0
+
+5. Write Code / POCOs + DataContext w.r.t. Database as mentioned in  POCOs.cs
+
+6. Compile Code (Ensure No errors)
+
+7. GoTo Tools > Nuget Package Manager > Package Manager Console
+
+8. put a command on console:
+   add-migration MODELToDB
+
+   Instead of ""MODELTODB"" - you can use any
+   other name for migration
+
+   put anoter command now:
+
+9.  update-database

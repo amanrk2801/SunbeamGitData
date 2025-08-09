@@ -1,0 +1,5 @@
+1. cd c:\Users\amank\OneDrive\Desktop\Practice\Revision\Cpp && pdf2txt.bat Day01_Help.pdf
+
+or 
+
+2. python pdf_to_text.py Day01_Help.pdf

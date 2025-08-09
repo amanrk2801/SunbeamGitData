@@ -1,0 +1,23 @@
+CSRF 
+-  Cross-Site Request Forgery. 
+It's a type of  security vulnerability(attack) that tricks a user's browser into making unwanted requests to a different site where they are already  authenticated.
+
+eg .
+Suppose  you're logged into your bank account(having a vulnerable bank site) . 
+
+If you visit a malicious website,  you might see a pop up or link 
+Click this link to win a fabulous prize !!!!
+Internally , that hacker's site could send a request to your bank :
+
+<img src="https://mybank.com/transfer?amount=10000&to=hacker" />
+
+If you're still logged in to your bank, the browser might send cookies with the request, and the transfer could go through if CSRF protection is not enabled.
+
+To prevent this attack - 
+
+Secure site Server generates a CSRF token and sends it to the client (usually in a hidden form field or response header).
+
+Client sends this token back with the request (e.g. in form data or request headers).
+
+Server validates the token before processing the request.
+

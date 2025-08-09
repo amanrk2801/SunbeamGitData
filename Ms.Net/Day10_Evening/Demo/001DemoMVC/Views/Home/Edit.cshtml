@@ -1,0 +1,44 @@
+﻿@model _001DemoMVC.Models.Emp
+<html>
+    <head>
+        <title>Create New Record</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <form action="/Home/AfterEdit" method="post">
+        <div class="container">
+            <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+               @*  <td>No</td> *@
+                <td colspan="2">
+                    <input type="hidden" name="No" value="@Model.No" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="Name" value="@Model.Name"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" name="Address" value="@Model.Address" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class="btn btn-primary" type="submit" value="Update Record" />
+                </td>
+            </tr>
+
+        </table>
+            </div>
+        </div>
+    </form>
+    </body>
+</html>

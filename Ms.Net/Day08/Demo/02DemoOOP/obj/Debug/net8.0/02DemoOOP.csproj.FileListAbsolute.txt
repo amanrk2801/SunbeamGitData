@@ -1,0 +1,14 @@
+D:\KaradDotNetDemos\Demo\02DemoOOP\bin\Debug\net8.0\02DemoOOP.exe
+D:\KaradDotNetDemos\Demo\02DemoOOP\bin\Debug\net8.0\02DemoOOP.deps.json
+D:\KaradDotNetDemos\Demo\02DemoOOP\bin\Debug\net8.0\02DemoOOP.runtimeconfig.json
+D:\KaradDotNetDemos\Demo\02DemoOOP\bin\Debug\net8.0\02DemoOOP.dll
+D:\KaradDotNetDemos\Demo\02DemoOOP\bin\Debug\net8.0\02DemoOOP.pdb
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.GeneratedMSBuildEditorConfig.editorconfig
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.AssemblyInfoInputs.cache
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.AssemblyInfo.cs
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.csproj.CoreCompileInputs.cache
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.dll
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\refint\02DemoOOP.dll
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.pdb
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\02DemoOOP.genruntimeconfig.cache
+D:\KaradDotNetDemos\Demo\02DemoOOP\obj\Debug\net8.0\ref\02DemoOOP.dll

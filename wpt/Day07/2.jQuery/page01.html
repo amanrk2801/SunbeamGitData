@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add the jQuery library to your html page -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 id="h1">Header</h1>
+    <p id="p1">This is para 1</p>
+    <div>
+        <p id="p2">This is para 2</p>
+    </div>
+    <div>
+        <button onclick="changeH1()">Change H1</button>
+        <button onclick="changeP1()">Change p1</button>
+        <button onclick="changeP2()">Change p2</button>
+    </div>
+    <script>
+        function changeH1() {
+            // const h1 = document.getElementById("h1")
+            // h1.innerText = "Hello"
+
+            $("#h1").text("Hello")
+        }
+        function changeP1() {
+            // const p = document.getElementById("p1")
+            // p.innerHTML = `<b>Welcome to Sunbeam</b>`
+
+            $("#p1").html(`<b>Welcome to Sunbeam</b>`)
+        }
+        function changeP2() {
+            // const p = document.getElementById("p2")
+            // p.innerText = "Pune, Karad"
+            // p.style.color = "Red"
+            $("#p2").text("Pune,Karad").css("color", "Red")
+        }
+    </script>
+</body>
+
+</html>
